@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class CordasVocais : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     public InputActionReference hit;
     public Material vibrationMaterial;
     public ParticleSystem noteParticle;
@@ -20,17 +20,35 @@ public class CordasVocais : MonoBehaviour
     {
         hit.action.started -= HitAction;
     }
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        animator = this.GetComponent<Animator>();
+    }
     private void HitAction(InputAction.CallbackContext context)
     {
         // animator.SetInteger("Animation", animator.GetInteger("Animation") + 1);
+        HitAnimation();
+    }
+    public void HitAnimation()
+    {
         animator.SetInteger("Animation", UnityEngine.Random.Range(1, 6));
-        vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f); 
+        //vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f);
+        vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f);
         StartCoroutine(AnimationRestart());
 
         noteParticle.Play();
-        noteLine.Play();
+        //noteLine.Play();
     }
+    public void MissedHitAnimation()
+    {
+        animator.SetInteger("Animation", 7);
+        vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f);
+        StartCoroutine(AnimationRestart());
+
+        noteParticle.Play(); 
+    }
+
 
     private IEnumerator AnimationRestart()
     {
@@ -39,17 +57,5 @@ public class CordasVocais : MonoBehaviour
         vibrationMaterial.SetFloat("_VibrationStrengh", 0.0f);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
- 
-        
-        
-    }
+    
 }

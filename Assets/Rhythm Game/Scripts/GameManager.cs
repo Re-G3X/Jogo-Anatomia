@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public GameObject vocalChordsModel;
+    [SerializeField]
+    private CordasVocais vocalChords;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        vocalChords = vocalChordsModel.GetComponent<CordasVocais>();
     }
 
     // Update is called once per frame
@@ -36,10 +42,13 @@ public class GameManager : MonoBehaviour
     public void NoteHit()
     {
         Debug.Log("Hit On Time");
+        vocalChords.HitAnimation();
+
     }
 
     public void NoteMissed()
     {
         Debug.Log("Missed Note");
+        vocalChords.MissedHitAnimation();
     }
 }
