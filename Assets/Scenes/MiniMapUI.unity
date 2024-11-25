@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +103,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +116,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -128,6 +127,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 704058864}
     m_Modifications:
     - target: {fileID: 8905234273498854919, guid: a8fcd33f1b0da884ca290fdce3726911,
@@ -361,6 +361,9 @@ PrefabInstance:
       value: 113.80844
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8fcd33f1b0da884ca290fdce3726911, type: 3}
 --- !u!224 &11300347 stripped
 RectTransform:
@@ -379,6 +382,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 704058864}
     m_Modifications:
     - target: {fileID: 8905234273498854919, guid: a8fcd33f1b0da884ca290fdce3726911,
@@ -642,6 +646,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8fcd33f1b0da884ca290fdce3726911, type: 3}
 --- !u!1 &106779699 stripped
 GameObject:
@@ -732,7 +739,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -751,7 +760,6 @@ RectTransform:
   - {fileID: 11300347}
   - {fileID: 106779700}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -770,17 +778,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f2b384b96489ea3d41a60c154b164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: 770109cbba2bb474da09f4d3062a9aab, type: 3}
   <FullMap>k__BackingField: {fileID: 106779699}
   <MiniMap>k__BackingField: {fileID: 11300348}
   interactAction: {fileID: 4647015306999821288, guid: 770109cbba2bb474da09f4d3062a9aab,
     type: 3}
   <MinimapCamera>k__BackingField: {fileID: 1413558422}
+  _fullScreenSize: 240
+  _minimapSize: 120
 --- !u!1001 &1413558421
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7248444327454335597, guid: 18f8b4a975c87a64581ccf4f4d51ed02,
@@ -844,6 +854,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18f8b4a975c87a64581ccf4f4d51ed02, type: 3}
 --- !u!20 &1413558422 stripped
 Camera:
@@ -851,3 +864,9 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1413558421}
   m_PrefabAsset: {fileID: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 704058864}
+  - {fileID: 1413558421}

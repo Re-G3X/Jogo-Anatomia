@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3579693897287787658}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -170,7 +169,6 @@ RectTransform:
   - {fileID: 3579693897287787658}
   - {fileID: 3579693898036837699}
   m_Father: {fileID: 3579693897674956510}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -247,7 +245,6 @@ RectTransform:
   m_Children:
   - {fileID: 3579693896529342456}
   m_Father: {fileID: 3579693896691441611}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07456038, y: 0.24563856}
   m_AnchorMax: {x: 0.9295727, y: 0.947}
@@ -323,7 +320,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3579693898036837699}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -460,7 +456,6 @@ RectTransform:
   m_Children:
   - {fileID: 3579693896691441611}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -521,7 +516,7 @@ MonoBehaviour:
     Scene: {fileID: 102900000, guid: 6ab9f7015ab81b644a9b23f3eb5d80e2, type: 3}
     SceneName: LevelSelector
     sceneIndex: 8
-    sceneEnabled: 1
+    sceneEnabled: 0
 --- !u!1 &3579693898036837696
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +550,6 @@ RectTransform:
   m_Children:
   - {fileID: 3579693897339412895}
   m_Father: {fileID: 3579693896691441611}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33100003, y: 0.046242964}
   m_AnchorMax: {x: 0.6704376, y: 0.14940964}
