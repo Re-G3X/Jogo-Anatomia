@@ -30,6 +30,7 @@
     "com.unity.textmeshpro": "3.0.7",
     "com.unity.timeline": "1.7.6",
     "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.4",
+    "com.unity.toonshader": "0.10.2-preview",
     "com.unity.ugui": "1.0.0",
     "com.unity.xr.legacyinputhelpers": "2.1.11",
     "io.tinu.asepriteimporter": "https://github.com/martinhodler/unity-aseprite-importer.git",
