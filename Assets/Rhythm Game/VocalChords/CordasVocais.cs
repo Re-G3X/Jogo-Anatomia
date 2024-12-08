@@ -9,7 +9,8 @@ public class CordasVocais : MonoBehaviour
     public Animator animator;
     public InputActionReference hit;
     public Material vibrationMaterial;
-    public ParticleSystem noteParticle;
+    public ParticleSystem noteHitParticle;
+    public ParticleSystem noteMissedParticle;
     public ParticleSystem noteLine;
 
     private void OnEnable()
@@ -37,7 +38,7 @@ public class CordasVocais : MonoBehaviour
         vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f);
         StartCoroutine(AnimationRestart());
 
-        noteParticle.Play();
+        noteHitParticle.Play();
         //noteLine.Play();
     }
     public void MissedHitAnimation()
@@ -46,7 +47,7 @@ public class CordasVocais : MonoBehaviour
         vibrationMaterial.SetFloat("_VibrationStrengh", 0.07f);
         StartCoroutine(AnimationRestart());
 
-        noteParticle.Play(); 
+        noteMissedParticle.Play(); 
     }
 
 
