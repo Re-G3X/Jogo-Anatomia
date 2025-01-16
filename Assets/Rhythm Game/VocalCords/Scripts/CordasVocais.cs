@@ -36,6 +36,7 @@ public class CordasVocais : MonoBehaviour
     {
         animator = this.GetComponent<Animator>();
         spotLight.intensity = 0;
+        spotLightUp.intensity = 10;
         ResetStreak();
     }
     private void HitAction(InputAction.CallbackContext context)
@@ -56,12 +57,12 @@ public class CordasVocais : MonoBehaviour
         StartCoroutine(AnimationRestart());
         if (streak > 5) {
             noteHitStreakParticle.Play();
-            if (streak < 15)
+            if (streak < 10)
             {
                 spotLightUp.intensity = streak * 30;
             }
-            if (streak > 25 && streak < 40) {
-                spotLight.intensity = (streak - 25) * 30;
+            if (streak > 8 && streak < 15) {
+                spotLight.intensity = (streak - 9) * 70;
             }
             return;
         }

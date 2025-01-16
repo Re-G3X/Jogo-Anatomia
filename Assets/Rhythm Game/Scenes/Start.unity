@@ -1559,9 +1559,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 10
   m_Range: 71.66
-  m_SpotAngle: 34.220592
+  m_SpotAngle: 26.32353
   m_InnerSpotAngle: 26.32353
   m_CookieSize: 10
   m_Shadows:
@@ -1674,7 +1674,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 10
   m_Range: 15.2
   m_SpotAngle: 51.058823
   m_InnerSpotAngle: 34.963844
@@ -3045,7 +3045,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7075,7 +7075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1039437546
 Transform:
   m_ObjectHideFlags: 0
@@ -9472,15 +9472,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997178216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1789703, y: 5.13027, z: 39.80851}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.98812133, z: -0, w: 0.15367576}
+  m_LocalPosition: {x: -2.9099674, y: -0.073243305, z: -9.501175}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 656463704}
   - {fileID: 1039437546}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 7407109269358136212}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030347559
 GameObject:
@@ -10016,3 +10016,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a09cca79d7874499eefcdeb92fea59, type: 3}
+--- !u!4 &7407109269358136212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7407109269861548237, guid: a0a09cca79d7874499eefcdeb92fea59,
+    type: 3}
+  m_PrefabInstance: {fileID: 7407109269358136211}
+  m_PrefabAsset: {fileID: 0}
