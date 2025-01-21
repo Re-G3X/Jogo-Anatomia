@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class CordasVocais : MonoBehaviour
 {
     public Animator animator;
+    public Animator lightsAnimator;
     public InputActionReference hit;
     public Material vibrationMaterial;
     public ParticleSystem noteHitParticle;
@@ -20,8 +21,7 @@ public class CordasVocais : MonoBehaviour
     public GameObject lightsLevel_2;
     public Light spotLight;
     public Light spotLightUp;
-
-
+     
 
     private void OnEnable()
     {
@@ -46,10 +46,12 @@ public class CordasVocais : MonoBehaviour
     }
     public void HitAnimation()
     {
+        int spotLight_Goal;
+        int spotLightUp_Goal;
+        
         streak++;
-        if (streak == 5) { 
-            lightsLevel_1.SetActive(false);
-            lightsLevel_2.SetActive(true);
+        if (streak == 5) {
+            lightsAnimator.Play("TransitionLevel2");
         }
 
         animator.SetInteger("Animation", UnityEngine.Random.Range(1, 6));
@@ -60,6 +62,7 @@ public class CordasVocais : MonoBehaviour
             if (streak < 10)
             {
                 spotLightUp.intensity = streak * 30;
+
             }
             if (streak > 8 && streak < 15) {
                 spotLight.intensity = (streak - 9) * 70;
