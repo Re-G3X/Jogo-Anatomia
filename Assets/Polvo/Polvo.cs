@@ -13,6 +13,12 @@ public class Polvo : MonoBehaviour
     private Transform parent;
     [SerializeField] 
     private bool canFlyAtacking = true;
+    [SerializeField]
+    private float followDistance = 10;
+    [SerializeField]
+    private float followSpeed = 3;
+    [SerializeField]
+    private float atackDistance = 5;
 
     float time = 0f;
     float interval = 4f;
@@ -32,24 +38,30 @@ public class Polvo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*time += Time.deltaTime;
-        while (time < interval) { 
-            canFlyAtacking = true;
-            time -= Time.deltaTime;
-        }
-
-
-        if (canFlyAtacking)
-        {
-            
-        }*/
-        //StartCoroutine(FlyingAtack());
-        StartCoroutine(FlyingAtack());
+         
+        HandleOnMovement();
     }
 
     private void HandleOnMovement()
-    {
-        
+    { 
+        if (!canFlyAtacking)
+        {
+            transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.up * 5, followSpeed * Time.deltaTime);
+        }
+        else
+        {
+            float distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
+            Debug.Log("Distance from Player :" + distanceFromPlayer);
+            if (distanceFromPlayer < followDistance && distanceFromPlayer > atackDistance)
+            {
+                transform.position = Vector3.Lerp(transform.position, player.transform.position, followSpeed * Time.deltaTime);
+            }
+            if (distanceFromPlayer < atackDistance)
+            {
+                StartCoroutine(FlyingAtack());
+            }
+        }
+            
     }
     private List<Vector3> GetFlyingAtackPoints(List<Vector3> atackAimingPoints)
     {
@@ -57,11 +69,15 @@ public class Polvo : MonoBehaviour
         atackAimingPoints.Add(transform.position);
         atackAimingPoints.Add(player.transform.position); // Posição do player
         float x_distance = player.transform.position.x - this.transform.position.x;
-        /*if (x_distance < 0) { // player a esquerda
-            x_distance = x_distance;  
-        }*/
-        // Outro lado
-        atackAimingPoints.Add(new Vector3(transform.position.x + (x_distance * 2), transform.position.y, transform.position.y));
+        if(x_distance > 0 && x_distance < 3)
+        {
+            x_distance = 3;
+        }
+        else if (x_distance < 0 && x_distance > -3)
+        {
+            x_distance = -3;
+        }
+        atackAimingPoints.Add(new Vector3(transform.position.x + (x_distance * 2), transform.position.y, transform.position.z));
         return atackAimingPoints;
     }
 
@@ -90,10 +106,16 @@ public class Polvo : MonoBehaviour
 
                 yield return null;
             }
-            t = 0f;
+            t = 0f; 
             RestartPosition();
-        }
-        
+            StartCoroutine(FlyingAtackResetTime());
+        }   
+    }
+
+    IEnumerator FlyingAtackResetTime()
+    {
+        yield return new WaitForSeconds(1f);
+        canFlyAtacking = true;
     }
 
      private void RestartPosition()
