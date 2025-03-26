@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -18,11 +19,11 @@ public class Polvo : MonoBehaviour
     [SerializeField]
     private float followSpeed = 3;
     [SerializeField]
-    private float atackDistance = 5;
+    private float atackDistance = 5.7f;
 
     float time = 0f;
     float interval = 4f;
-
+    
 
     public float t = 0;
 
@@ -43,25 +44,40 @@ public class Polvo : MonoBehaviour
     }
 
     private void HandleOnMovement()
-    { 
-        if (!canFlyAtacking)
+    {
+        bool onRightFromPlayer;
+        Vector3 startAtackingPosition;
+        if (transform.position.x < player.transform.position.x)
         {
-            transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.up * 5, followSpeed * Time.deltaTime);
+            onRightFromPlayer = false;
+            startAtackingPosition = player.transform.position + (Vector3.right * -4) + Vector3.up * 4; 
         }
         else
         {
+            onRightFromPlayer = true;
+            startAtackingPosition = player.transform.position + (Vector3.right * 4) + Vector3.up * 4;
+        }
+         
+         
+        if (!canFlyAtacking)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startAtackingPosition, followSpeed * Time.deltaTime);
+        }
+        else
+        {  
             float distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
             Debug.Log("Distance from Player :" + distanceFromPlayer);
             if (distanceFromPlayer < followDistance && distanceFromPlayer > atackDistance)
             {
-                transform.position = Vector3.Lerp(transform.position, player.transform.position, followSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, startAtackingPosition, followSpeed * Time.deltaTime);
+
+                Debug.Log("distanceFromPlayer : " + distanceFromPlayer + "atackDistance: " + atackDistance);
             }
             if (distanceFromPlayer < atackDistance)
             {
                 StartCoroutine(FlyingAtack());
             }
-        }
-            
+        } 
     }
     private List<Vector3> GetFlyingAtackPoints(List<Vector3> atackAimingPoints)
     {

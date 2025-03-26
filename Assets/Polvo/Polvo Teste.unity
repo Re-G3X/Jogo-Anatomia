@@ -244,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 400845936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.83, y: 1.09, z: 0}
+  m_LocalPosition: {x: 8.31, y: 3.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,9 +264,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atackAimingPoints: []
   canFlyAtacking: 1
-  followDistance: 15
-  followSpeed: 1
-  atackDistance: 5
+  followDistance: 12
+  followSpeed: 6
+  atackDistance: 5.7
   t: 0
 --- !u!1 &1185700295
 GameObject:
@@ -347,7 +347,7 @@ Transform:
   m_GameObject: {fileID: 1185700295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.34, y: -0.02, z: 0}
+  m_LocalPosition: {x: -8.6, y: -0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 1207461931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.96, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
