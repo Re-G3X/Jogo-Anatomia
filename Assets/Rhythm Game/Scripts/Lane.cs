@@ -61,22 +61,15 @@ public class Lane : MonoBehaviour
                 {
                     // nota acertada dentro da margem de erro
                     Hit();
-                    print($"Hit on {inputIndex} note");
+                    //print($"Hit on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
-                else
+                /*else
                 {
                     // nota pressionada fora da margem de erro
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                }
-            }
-            // verifica se a nota foi perdida
-            if (timeStamp + marginOfError <= audioTime)
-            {
-                Miss();
-                print($"Missed {inputIndex} note");
-                inputIndex++;
+                }*/
             }
         }
 
