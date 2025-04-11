@@ -6,10 +6,11 @@ public class Note : MonoBehaviour
 {
     double timeInstantiated;
     public float assignedTime;
-    private bool isInMissLine = false; // Verifica se a nota está colidindo com a MissLine
+    private bool isInGoodLine = false; // Verifica se a nota está colidindo com a GoodLine
     private bool isInPerfectLine = false; // Verifica se a nota está colidindo com a PerfectLine
     private bool isHit = false; // Verifica se a nota foi acertada
     private Lane parentLane; // Referência à Lane da nota
+    private static bool keyPressedThisFrame = false; // Impede múltiplas notas sendo acertadas ao mesmo tempo
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Note : MonoBehaviour
 
     void Update()
     {
+        keyPressedThisFrame = false; // Reseta a flag a cada frame
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
 
@@ -28,7 +30,6 @@ public class Note : MonoBehaviour
             if (!isHit)
             {
                 ScoreManager.Miss();
-                //Debug.Log("Miss!");
             }
             Destroy(gameObject);
         }
@@ -39,30 +40,33 @@ public class Note : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
         }
 
-        // Verifica se a nota está na MissLine e o jogador pressionou a tecla correta
-        if (isInMissLine && Input.GetKeyDown(parentLane.input) && !isHit)
-        {
-            isHit = true; // Marca como acerto
-            ScoreManager.Hit(); // Conta o acerto normal
-            Debug.Log("Hit na MissLine!");
-            Destroy(gameObject); // Destrói a nota após o acerto
-        }
-
         // Verifica se a nota está na PerfectLine e o jogador pressionou a tecla correta
-        if (isInPerfectLine && Input.GetKeyDown(parentLane.input) && !isHit)
+        if (isInPerfectLine && Input.GetKeyDown(parentLane.input) && !isHit && !keyPressedThisFrame)
         {
             isHit = true; // Marca como acerto perfeito
+            keyPressedThisFrame = true; // Impede outras notas de serem acertadas neste frame
             ScoreManager.PerfectHit(); // Conta o acerto perfeito
             Debug.Log("Perfect Hit!");
+            Destroy(gameObject); // Destrói a nota após o acerto
+            return; // Impede que seja contado como um acerto normal também
+        }
+
+        // Verifica se a nota está na GoodLine e o jogador pressionou a tecla correta
+        if (isInGoodLine && Input.GetKeyDown(parentLane.input) && !isHit && !keyPressedThisFrame)
+        {
+            isHit = true; // Marca como acerto normal
+            keyPressedThisFrame = true; // Impede outras notas de serem acertadas neste frame
+            ScoreManager.Hit(); // Conta o acerto normal
+            Debug.Log("Good Hit!");
             Destroy(gameObject); // Destrói a nota após o acerto
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("MissLine"))
+        if (other.CompareTag("GoodLine"))
         {
-            isInMissLine = true; // Marca que a nota está na MissLine
+            isInGoodLine = true; // Marca que a nota está na GoodLine
         }
         if (other.CompareTag("PerfectLine"))
         {
@@ -72,9 +76,9 @@ public class Note : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("MissLine"))
+        if (other.CompareTag("GoodLine"))
         {
-            isInMissLine = false; // Reseta o status da MissLine
+            isInGoodLine = false; // Reseta o status da GoodLine
         }
         if (other.CompareTag("PerfectLine"))
         {

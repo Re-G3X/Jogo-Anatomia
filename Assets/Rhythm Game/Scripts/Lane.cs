@@ -6,20 +6,22 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
-    public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction; // restrição de nota para essa lane 
-    public KeyCode input; // tecla associada para ativar essa lane
-    public GameObject notePrefab; 
-    List<Note> notes = new List<Note>(); // lista de notas ativas na lane 
+    public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction; // Restrição de nota para essa lane 
+    public KeyCode input; // Tecla associada para ativar essa lane
+    public GameObject notePrefab;
+    List<Note> notes = new List<Note>(); // Lista de notas ativas na lane 
     public List<double> timeStamps = new List<double>();
 
     int spawnIndex = 0;
     int inputIndex = 0;
 
+    public static bool keyPressedThisFrame = false; // Impede múltiplas notas no mesmo frame
+
     void Start()
     {
     }
 
-    // configura os timestamps das notas filtrando apenas as que pertencem a esta lane
+    // Configura os timestamps das notas filtrando apenas as que pertencem a esta lane
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
         foreach (var note in array)
@@ -34,12 +36,14 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
-        // verifica se ainda há notas para spawnar e se é o momento correto
+        keyPressedThisFrame = false; // Reseta a flag para o próximo frame
+
+        // Verifica se ainda há notas para spawnar e se é o momento correto
         if (spawnIndex < timeStamps.Count)
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
             {
-                // instancia uma nova nota e armazena na lista
+                // Instancia uma nova nota e armazena na lista
                 var note = Instantiate(notePrefab, transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
@@ -47,40 +51,32 @@ public class Lane : MonoBehaviour
             }
         }
 
-        // verifica se ainda há notas para capturar input e processar acertos/erros
-        if (inputIndex < timeStamps.Count)
+        // Verifica se ainda há notas para capturar input e processar acertos/erros
+        if (inputIndex < notes.Count && Input.GetKeyDown(input) && !keyPressedThisFrame)
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.marginOfError;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
 
-            // verifica se o jogador pressionou a tecla correspondente
-            if (Input.GetKeyDown(input))
+            // Verifica se a tecla foi pressionada no tempo correto
+            if (Math.Abs(audioTime - timeStamp) < marginOfError)
             {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
-                {
-                    // nota acertada dentro da margem de erro
-                    Hit();
-                    //print($"Hit on {inputIndex} note");
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
-                }
-                /*else
-                {
-                    // nota pressionada fora da margem de erro
-                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                }*/
+                // Nota acertada dentro da margem de erro
+                Hit();
+                Destroy(notes[inputIndex].gameObject);
+                notes.RemoveAt(inputIndex); // Remove a nota da lista para evitar erros futuros
+                keyPressedThisFrame = true; // Impede que outras notas sejam acertadas no mesmo frame
             }
         }
-
     }
-    // jogador acertou uma nota
+
+    // Jogador acertou uma nota
     private void Hit()
     {
         ScoreManager.Hit();
     }
 
-    // jogador errou uma nota
+    // Jogador errou uma nota
     private void Miss()
     {
         ScoreManager.Miss();

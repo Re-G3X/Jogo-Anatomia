@@ -24,8 +24,8 @@ TagManager:
   - Floor
   - EdgeTester
   - Note
-  - MissLine
   - PerfectLine
+  - GoodLine
   layers:
   - Default
   - TransparentFX
