@@ -10,7 +10,7 @@ public class Note : MonoBehaviour
     private bool isInPerfectLine = false; // Verifica se a nota está colidindo com a PerfectLine
     private bool isHit = false; // Verifica se a nota foi acertada
     private Lane parentLane; // Referência à Lane da nota
-    private static bool keyPressedThisFrame = false; // Impede múltiplas notas sendo acertadas ao mesmo tempo
+    public static bool keyPressedThisFrame = false; // Impede múltiplas notas sendo acertadas ao mesmo tempo
 
     void Start()
     {
@@ -20,7 +20,9 @@ public class Note : MonoBehaviour
 
     void Update()
     {
-        keyPressedThisFrame = false; // Reseta a flag a cada frame
+        //keyPressedThisFrame = false; // Reseta a flag a cada frame
+        keyPressedThisFrame = parentLane.GetKeyIsPressedThisFrame();
+        Debug.Log("KeyPressedthisFrame = " + keyPressedThisFrame);
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
 
@@ -41,10 +43,11 @@ public class Note : MonoBehaviour
         }
 
         // Verifica se a nota está na PerfectLine e o jogador pressionou a tecla correta
-        if (isInPerfectLine && Input.GetKeyDown(parentLane.input) && !isHit && !keyPressedThisFrame)
+        if (isInPerfectLine && Input.GetKeyDown(parentLane.input) && !isHit && keyPressedThisFrame == false)
         {
             isHit = true; // Marca como acerto perfeito
             keyPressedThisFrame = true; // Impede outras notas de serem acertadas neste frame
+            parentLane.SetKeyIsPressedThisFrame();
             ScoreManager.PerfectHit(); // Conta o acerto perfeito
             Debug.Log("Perfect Hit!");
             Destroy(gameObject); // Destrói a nota após o acerto
@@ -52,10 +55,11 @@ public class Note : MonoBehaviour
         }
 
         // Verifica se a nota está na GoodLine e o jogador pressionou a tecla correta
-        if (isInGoodLine && Input.GetKeyDown(parentLane.input) && !isHit && !keyPressedThisFrame)
+        if (isInGoodLine && Input.GetKeyDown(parentLane.input) && !isHit && keyPressedThisFrame == false)
         {
             isHit = true; // Marca como acerto normal
             keyPressedThisFrame = true; // Impede outras notas de serem acertadas neste frame
+            parentLane.SetKeyIsPressedThisFrame();
             ScoreManager.Hit(); // Conta o acerto normal
             Debug.Log("Good Hit!");
             Destroy(gameObject); // Destrói a nota após o acerto

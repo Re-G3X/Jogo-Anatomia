@@ -13,8 +13,7 @@ public class Lane : MonoBehaviour
     public List<double> timeStamps = new List<double>();
 
     int spawnIndex = 0;
-    int inputIndex = 0;
-
+    int inputIndex = 0; 
     public static bool keyPressedThisFrame = false; // Impede múltiplas notas no mesmo frame
 
     void Start()
@@ -50,24 +49,29 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
-
+        
         // Verifica se ainda há notas para capturar input e processar acertos/erros
-        if (inputIndex < notes.Count && Input.GetKeyDown(input) && !keyPressedThisFrame)
+        if (inputIndex < notes.Count && Input.GetKeyDown(input) && keyPressedThisFrame == false)
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.marginOfError;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
 
+            
+            
+
             // Verifica se a tecla foi pressionada no tempo correto
-            if (Math.Abs(audioTime - timeStamp) < marginOfError)
-            {
+            if (Math.Abs(audioTime - timeStamp) < marginOfError) // Esse cara não tá entrando...
+            { 
                 // Nota acertada dentro da margem de erro
                 Hit();
+                //keyPressedThisFrame = true; // Impede que outras notas sejam acertadas no mesmo frame
                 Destroy(notes[inputIndex].gameObject);
                 notes.RemoveAt(inputIndex); // Remove a nota da lista para evitar erros futuros
-                keyPressedThisFrame = true; // Impede que outras notas sejam acertadas no mesmo frame
+                
             }
         }
+
     }
 
     // Jogador acertou uma nota
@@ -80,5 +84,14 @@ public class Lane : MonoBehaviour
     private void Miss()
     {
         ScoreManager.Miss();
+    }
+
+    public void SetKeyIsPressedThisFrame()
+    {
+        keyPressedThisFrame = true;
+    }
+    public bool GetKeyIsPressedThisFrame()
+    {
+        return keyPressedThisFrame;
     }
 }
