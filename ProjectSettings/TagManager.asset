@@ -22,6 +22,10 @@ TagManager:
   - EnemyProjectile
   - PlayerMelee
   - Floor
+  - EdgeTester
+  - Note
+  - PerfectLine
+  - GoodLine
   layers:
   - Default
   - TransparentFX

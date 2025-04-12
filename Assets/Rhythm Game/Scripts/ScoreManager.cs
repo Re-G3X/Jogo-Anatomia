@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     public AudioSource hitSFX; // som de acerto
     public AudioSource missSFX; // som de erro
     public TMPro.TextMeshPro scoreText; // texto para exibir score
-    public TMPro.TextMeshPro comboText; // texto para exibir a quant de combos
+    public TMPro.TextMeshPro comboText; // texto para exibir a quantidade de combos
     public TMPro.TextMeshPro missText; // texto para exibir "MISS"
 
     static int totalScore; // armazenar a pontuação
@@ -28,6 +29,13 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 5 * comboScore; // aumenta a pontuação com base na quantidade de combos
         Instance.hitSFX.Play();
+    }
+
+    public static void PerfectHit()
+    {
+        comboScore += 1;
+        totalScore += 10 * comboScore; // aumenta a pontuação com base na quantidade de combos para perfect hit
+        Instance.hitSFX.Play(); // Toca o som de acerto perfeito
     }
 
     public static void Miss()
