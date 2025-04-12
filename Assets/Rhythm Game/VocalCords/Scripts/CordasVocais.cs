@@ -91,7 +91,7 @@ public class CordasVocais : MonoBehaviour
 
     private IEnumerator AnimationRestart()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.35f);
         animator.SetInteger("Animation", 0);
         vibrationMaterial.SetFloat("_VibrationStrengh", 0.0f);
     }
