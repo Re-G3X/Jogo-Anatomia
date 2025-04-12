@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 5 * comboScore; // aumenta a pontuação com base na quantidade de combos
         Instance.hitSFX.Play();
-        vocalCords.HitAnimation();
+        //vocalCords.HitAnimation();
     }
 
     public static void PerfectHit()
@@ -41,14 +41,14 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 10 * comboScore; // aumenta a pontuação com base na quantidade de combos para perfect hit
         Instance.hitSFX.Play(); // Toca o som de acerto perfeito
-        vocalCords.HitAnimation();
+         
     }
 
     public static void Miss()
     {
         comboScore = 0; // reseta o combo
         Instance.missSFX.Play();
-
+        vocalCords.MissedHitAnimation();
         if (Instance.missText != null)
         {
             Instance.missText.gameObject.SetActive(true);

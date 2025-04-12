@@ -15,9 +15,11 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
     int inputIndex = 0; 
     public static bool keyPressedThisFrame = false; // Impede múltiplas notas no mesmo frame
+    public static CordasVocais vocalCords;
 
     void Start()
     {
+        vocalCords = FindObjectOfType<CordasVocais>();
     }
 
     // Configura os timestamps das notas filtrando apenas as que pertencem a esta lane
@@ -89,6 +91,7 @@ public class Lane : MonoBehaviour
     public void SetKeyIsPressedThisFrame()
     {
         keyPressedThisFrame = true;
+        vocalCords.HitAnimation(noteRestriction.ToString());
     }
     public bool GetKeyIsPressedThisFrame()
     {
