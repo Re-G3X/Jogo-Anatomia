@@ -13,7 +13,9 @@ public class ScoreManager : MonoBehaviour
     public TMPro.TextMeshPro missText; // texto para exibir "MISS"
 
     static int totalScore; // armazenar a pontuação
-    static int comboScore;  // armazena a contagem de combos 
+    static int comboScore;  // armazena a contagem de 
+
+    public static CordasVocais vocalCords;
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class ScoreManager : MonoBehaviour
         comboScore = 0;
         if (missText != null)
             missText.gameObject.SetActive(false); // Esconde a mensagem "MISS" no início
+        vocalCords = FindObjectOfType<CordasVocais>();
+        
     }
 
     public static void Hit()
@@ -29,6 +33,7 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 5 * comboScore; // aumenta a pontuação com base na quantidade de combos
         Instance.hitSFX.Play();
+        vocalCords.HitAnimation();
     }
 
     public static void PerfectHit()
@@ -36,6 +41,7 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 10 * comboScore; // aumenta a pontuação com base na quantidade de combos para perfect hit
         Instance.hitSFX.Play(); // Toca o som de acerto perfeito
+        vocalCords.HitAnimation();
     }
 
     public static void Miss()
