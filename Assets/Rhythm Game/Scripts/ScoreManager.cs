@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     static int comboScore;  // armazena a contagem de 
 
     public static CordasVocais vocalCords;
+    public static ScoreParticles scoreParticles;
 
     void Start()
     {
@@ -25,15 +26,16 @@ public class ScoreManager : MonoBehaviour
         if (missText != null)
             missText.gameObject.SetActive(false); // Esconde a mensagem "MISS" no início
         vocalCords = FindObjectOfType<CordasVocais>();
-        
-    }
+        scoreParticles = FindObjectOfType<ScoreParticles>();
+
+}
 
     public static void Hit()
     {
         comboScore += 1;
         totalScore += 5 * comboScore; // aumenta a pontuação com base na quantidade de combos
         Instance.hitSFX.Play();
-        //vocalCords.HitAnimation();
+        scoreParticles.ParticleHit();
     }
 
     public static void PerfectHit()
@@ -41,7 +43,7 @@ public class ScoreManager : MonoBehaviour
         comboScore += 1;
         totalScore += 10 * comboScore; // aumenta a pontuação com base na quantidade de combos para perfect hit
         Instance.hitSFX.Play(); // Toca o som de acerto perfeito
-         
+        scoreParticles.ParticlePerfectHit();
     }
 
     public static void Miss()
@@ -49,6 +51,7 @@ public class ScoreManager : MonoBehaviour
         comboScore = 0; // reseta o combo
         Instance.missSFX.Play();
         vocalCords.MissedHitAnimation();
+        scoreParticles.ParticleMiss();
         if (Instance.missText != null)
         {
             Instance.missText.gameObject.SetActive(true);
