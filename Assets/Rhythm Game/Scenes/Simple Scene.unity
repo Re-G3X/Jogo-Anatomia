@@ -10333,9 +10333,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3ca1c86b1dc5d8740ad7f837caeae976, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7dbb0abe47d39bf4296bf63c98942817, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -16745,7 +16745,7 @@ MonoBehaviour:
   songDelayInSeconds: 0
   marginOfError: 0.08
   inputDelayInMilliseconds: 0
-  fileLocation: we_made_a_chart_pog.mid
+  fileLocation: boss_battle.mid
   noteTime: 1
   noteSpawnY: 0
   noteTapY: 3
