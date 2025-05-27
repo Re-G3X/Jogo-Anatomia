@@ -1,0 +1,34 @@
+{
+    "name": "EpigloteInputActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "03e983b0-e478-4954-8328-237d0e89e68d",
+            "actions": [
+                {
+                    "name": "Fechar",
+                    "type": "Button",
+                    "id": "37635f1b-6010-4eb2-81cd-aa51d77daac6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "36810105-0892-4d35-b336-6275096ecaf9",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fechar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
