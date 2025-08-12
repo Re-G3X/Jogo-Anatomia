@@ -12,6 +12,8 @@ public class Polvo : MonoBehaviour
 
     private GameObject player;
     private Transform parent;
+    private Animator animator;
+    //
     [SerializeField] private bool canFlyAtacking = true;
     [SerializeField] private float followDistance = 10;
     [SerializeField] private float followSpeed = 3;
@@ -25,12 +27,13 @@ public class Polvo : MonoBehaviour
     //
     [SerializeField] private bool onRightFromPlayer;
     [SerializeField] private bool facingRight;
-
+    [SerializeField] private AttackState attackState;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        animator = GetComponent<Animator>();
         parent = transform.parent;
         
     }
@@ -101,9 +104,15 @@ public class Polvo : MonoBehaviour
     IEnumerator FlyingAtack()
     {
         if ((canFlyAtacking))
-        { 
+        {
+            animator.SetTrigger("Atack");
             canFlyAtacking = false; 
             float duration = 1f;
+            attackState = AttackState.Charge;
+            StartCoroutine(FlyingAttackChargeCoroutine());
+            while (attackState == AttackState.Charge) {
+                yield return null;
+            }
             GetFlyingAtackPoints(atackAimingPoints);
             float height = atackAimingPoints[0].y - atackAimingPoints[1].y;
             while (t < 1f)
@@ -124,9 +133,15 @@ public class Polvo : MonoBehaviour
             t = 0f; 
             RestartPosition();
             StartCoroutine(FlyingAtackResetTime());
+            animator.SetTrigger("Idle");
+            attackState = AttackState.NotAttacking;
         }   
     }
-
+    IEnumerator FlyingAttackChargeCoroutine()
+    {
+        yield return new WaitForSeconds(1.1f);
+        attackState = AttackState.Attack;
+    }
     IEnumerator FlyingAtackResetTime()
     {
         yield return new WaitForSeconds(1f);
@@ -158,8 +173,13 @@ public class Polvo : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.Euler(0f, -135f, 0f);
-        }
+        } 
+    }
 
-        
+    private enum AttackState
+    {
+        NotAttacking,
+        Charge,
+        Attack 
     }
 }
