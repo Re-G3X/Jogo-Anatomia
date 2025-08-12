@@ -12,20 +12,19 @@ public class Polvo : MonoBehaviour
 
     private GameObject player;
     private Transform parent;
-    [SerializeField] 
-    private bool canFlyAtacking = true;
-    [SerializeField]
-    private float followDistance = 10;
-    [SerializeField]
-    private float followSpeed = 3;
-    [SerializeField]
-    private float atackDistance = 5.7f;
+    [SerializeField] private bool canFlyAtacking = true;
+    [SerializeField] private float followDistance = 10;
+    [SerializeField] private float followSpeed = 3;
+    [SerializeField] private float atackDistance = 5.7f;
 
     float time = 0f;
     float interval = 4f;
     
 
     public float t = 0;
+    //
+    [SerializeField] private bool onRightFromPlayer;
+    [SerializeField] private bool facingRight;
 
 
     // Start is called before the first frame update
@@ -41,11 +40,11 @@ public class Polvo : MonoBehaviour
     {
          
         HandleOnMovement();
+        HandleOnDirection();
     }
 
     private void HandleOnMovement()
-    {
-        bool onRightFromPlayer;
+    { 
         Vector3 startAtackingPosition;
         if (transform.position.x < player.transform.position.x)
         {
@@ -73,7 +72,7 @@ public class Polvo : MonoBehaviour
 
                 Debug.Log("distanceFromPlayer : " + distanceFromPlayer + "atackDistance: " + atackDistance);
             }
-            if (distanceFromPlayer < atackDistance)
+            if (distanceFromPlayer < atackDistance) // Triggers atack!
             {
                 StartCoroutine(FlyingAtack());
             }
@@ -138,5 +137,29 @@ public class Polvo : MonoBehaviour
     {
         parent.transform.position = this.transform.position;
         this.transform.localPosition = Vector3.zero;
+    }
+
+    private void HandleOnDirection()
+    { 
+        if (!onRightFromPlayer)
+        {
+            facingRight = true; 
+
+        }
+        else if (onRightFromPlayer)
+        {
+            facingRight = false;  
+        }
+
+        if (facingRight)
+        {
+            transform.rotation = Quaternion.Euler(0f, 135f, 0f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, -135f, 0f);
+        }
+
+        
     }
 }
