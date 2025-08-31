@@ -1710,23 +1710,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5191369d066582548ac8459973e1e10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 3
+  runSpeed: 5
   rotationSpeed: 7
   accelerationTime: 0.8
-  decelerationTime: 0.12
-  postRotationAccelerationTime: 0.02
+  decelerationTime: 0.2
   currentSpeed: 0
-  maxRunSpeed: 6
+  maxRunSpeed: 7
   grounded: 0
-  groundCheckRadius: 0.1
+  groundCheckRadius: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 1784526265}
   jumpSpeed: 15
+  wallCheck: {fileID: 1784526265}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  wallCheckRadius: 0.7
+  wallSlidingSpeed: 3
+  wallJumpTime: 0.2
+  wallJumpForce: 8
+  wallJumpHeight: 12
+  wallStickTime: 0.25
+  wallJumpDirection: 1
   move: {x: 0, y: 0}
+  look: {x: 0, y: 0}
   jump: 0
-  switchMode: 0
 --- !u!1001 &1942789351
 PrefabInstance:
   m_ObjectHideFlags: 0

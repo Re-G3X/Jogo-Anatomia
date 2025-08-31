@@ -4,33 +4,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Variáveis de movimento
-    public float runSpeed = 4f;
-    public float rotationSpeed = 15f;
-    public float accelerationTime = 0.2f;
+    public float runSpeed = 6f;
+    public float rotationSpeed = 7f;
+    public float accelerationTime = 0.8f;
     public float decelerationTime = 0.2f;
-    public float postRotationAccelerationTime = 0.1f;
     private float lastDirection = 0f;
     public float currentSpeed = 0f;
     private bool isRotating = false;
-    public float maxRunSpeed = 5.5f;
+    public float maxRunSpeed = 7f;
 
-    // Variáveis de pulo
     public bool grounded = false;
-    private bool isGrounded;
     private bool isJumping;
-    private bool isFalling;
     Collider[] groundCollisions;
-    public float groundCheckRadius = 1f;
+    private float groundedTimer = 0f;
+    public float groundCheckRadius = 0.8f;
     public LayerMask groundLayer;
     public Transform groundCheck;
     public float jumpSpeed;
-    private float ySpeed;
 
-    // Variáveis de entrada
+    public Transform wallCheck;
+    public LayerMask wallLayer;
+    public float wallCheckRadius = 0.7f;
+    private bool isWall;
+    private bool isWallSliding;
+    private bool canWallJump;
+    public float wallSlidingSpeed = 3f;
+    public float wallJumpTime = 0.2f;
+    public float wallJumpForce = 8f;
+    public float wallJumpHeight = 12f;
+    public float wallStickTime = 0.25f;
+    public float wallJumpDirection = 1f;
+    
+    private float wallJumpTimer = 0f;
+    private float wallStickTimer = 0f;
+    private bool wallJumping = false;
+
     public Vector2 move;
+    public Vector2 look;
     public bool jump;
-    public bool switchMode;
 
     Rigidbody rb;
     Animator anim;
@@ -45,71 +56,111 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("currentSpeed", Mathf.Abs(currentSpeed));
 
-        // Calcula a velocidade alvo
         move.x = Mathf.Clamp(move.x, -2, 2);
-        float targetSpeed = move.x * runSpeed;
         
-        if (Mathf.Abs(move.x) > 0.01f) // Quando há movimento
+        float moveInfluence = wallJumping ? 0.3f : 1f;
+        float targetSpeed = move.x * runSpeed * moveInfluence;
+
+        if (Mathf.Abs(move.x) > 0.01f && !isWallSliding)
         {
             currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, Time.deltaTime / accelerationTime);
-            
         }
-        else // Quando não há movimento
+        else if (!wallJumping)
         {
-            // Suaviza a velocidade atual para 0 usando decelerationTime
             currentSpeed = Mathf.Lerp(currentSpeed, 0, Time.deltaTime / decelerationTime);
         }
 
-        // Limita a velocidade atual
         currentSpeed = Mathf.Clamp(currentSpeed, -maxRunSpeed, maxRunSpeed);
 
-        // Verifica se há movimento na direção horizontal
-        if (move.x != 0)
+        if (wallJumping && wallJumpTimer > 0) 
         {
-            lastDirection = move.x; // Atualiza a última direção de movimento
-            isRotating = true; // Define a flag de rotação como verdadeira
+            wallJumpTimer -= Time.deltaTime;
+            if (wallJumpTimer <= 0)
+            {
+                wallJumping = false;
+            }
+        }
+        else if (move.x != 0 && !isWallSliding)
+        {
+            lastDirection = move.x;
+            isRotating = true;
         }
 
-        // Se o personagem está rotacionando
         if (isRotating)
         {
-            float targetRotation = Mathf.Sign(lastDirection) * 90f; // Define a rotação alvo com base na última direção
-            float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetRotation, Time.deltaTime * rotationSpeed); // Interpola o ângulo de rotação
-            transform.eulerAngles = new Vector3(0, angle, 0); // Aplica a nova rotação
+            float targetRotation = Mathf.Sign(lastDirection) * 90f;
+            float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetRotation, Time.deltaTime * rotationSpeed);
+            transform.eulerAngles = new Vector3(0, angle, 0);
 
-            // Verifica se a rotação atual está próxima da rotação alvo
-            if (Mathf.Abs(transform.eulerAngles.y - targetRotation) < 1f) 
+            if (Mathf.Abs(transform.eulerAngles.y - targetRotation) < 1f)
             {
-                isRotating = false; // Para a rotação quando próximo da rotação alvo
+                isRotating = false;
             }
         }
 
-        ySpeed += Physics.gravity.y * Time.deltaTime;
-        // Verifica se o personagem está no chão e se o botão de pulo foi pressionado
-        if (grounded)
-        {   
-            anim.SetBool("grounded", grounded); // Atualiza o estado da animação
-            isGrounded = true;
-            anim.SetBool("isJumping", false);
-            isJumping = false;
-            anim.SetBool("isFalling", false);
+        if (isWall)
+        {
+            wallJumpDirection = lastDirection;
+        }
 
-            if (jump)
-            {
-                ySpeed = jumpSpeed;
-                anim.SetBool("isJumping", true);
-                isJumping = true;
-                rb.velocity = new Vector3(rb.velocity.x, ySpeed, rb.velocity.z); // Reseta a velocidade vertical
-                grounded = false;
-            }
-            
+        bool movingTowardsWall = (wallJumpDirection > 0 && move.x > 0) || (wallJumpDirection < 0 && move.x < 0);
+        isWallSliding = isWall && !grounded && rb.velocity.y < 0 && movingTowardsWall;
+
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue), 0);
+            canWallJump = true;
         }
         else
         {
-            anim.SetBool("grounded", false); // Atualiza o estado da animação
-            grounded = false;
+            wallStickTimer = wallStickTime;
+            if (isWall && !grounded)
+            {
+                canWallJump = true;
+            }
+        }
 
-            if ((isJumping && ySpeed < 0) || ySpeed < -2)
+        if (grounded)
+        {
+            groundedTimer += Time.deltaTime;
+            anim.SetBool("grounded", true);
+            anim.SetBool("isJumping", false);
+            anim.SetBool("isFalling", false);
+            isJumping = false;
+            canWallJump = false;
+            wallJumping = false;
+
+            if (jump && groundedTimer >= 0.2f)
+            {
+                isJumping = true;
+                anim.SetBool("isJumping", true);
+                rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, 0);
+                grounded = false;
+                groundedTimer = 0f;
+            }
+        }
+        else
+        {
+            groundedTimer = 0f;
+            anim.SetBool("grounded", false);
+
+            if (jump && canWallJump && isWallSliding)
+            {
+                float jumpDirectionX = -wallJumpDirection * wallJumpForce;
+                rb.velocity = new Vector3(jumpDirectionX, wallJumpHeight, 0);
+                
+                wallJumping = true;
+                wallJumpTimer = wallJumpTime;
+                isWallSliding = false;
+                canWallJump = false;
+                
+                lastDirection = -wallJumpDirection;
+                isRotating = true;
+                
+                anim.SetBool("isJumping", true);
+            }
+
+            if ((isJumping && rb.velocity.y < 0) || rb.velocity.y < -2)
             {
                 anim.SetBool("isFalling", true);
             }
@@ -118,11 +169,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Verifica contato com o chão
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        grounded = groundCollisions.Length > 0; // Define o estado de "grounded" baseado nas colisões
+        grounded = groundCollisions.Length > 0;
 
-        // Move o personagem na direção horizontal com a velocidade interpolada
-        rb.velocity = new Vector3(currentSpeed, rb.velocity.y, 0);
+        isWall = Physics.CheckSphere(wallCheck.position, wallCheckRadius, wallLayer);
+
+        if (!wallJumping || wallJumpTimer <= wallJumpTime * 0.5f)
+        {
+            rb.velocity = new Vector3(currentSpeed, rb.velocity.y, 0);
+        }
     }
 }

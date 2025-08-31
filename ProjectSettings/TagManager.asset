@@ -3,12 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bomb
+  - Shield
+  - Heal
+  - EnemyBullet
+  - Bullet
+  - FxTemporaire
+  - Collectible
+  - Enemy
+  - EnemyMelee
+  - EdgeTester
+  - EnemyProjectile
+  - Npc
+  - PlayerProjectile
+  - PlayerTrigger
+  - Floor
+  - Block
+  - Sword
+  - Note
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Ground

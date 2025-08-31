@@ -27,6 +27,6 @@ public class UICanvasControllerInput : MonoBehaviour
 
     public void VirtualSwitchInput(bool virtualSwitchState)
     {
-        inputs.switchMode = virtualSwitchState; // Atualiza o estado de troca de modo
+        // inputs.switchMode = virtualSwitchState; // Atualiza o estado de troca de modo
     }
 }
