@@ -18,8 +18,12 @@ public class EpigloteGameManager : MonoBehaviour
     }
     IEnumerator DispenseFoodRoutine()
     {
-        yield return new WaitForSeconds(1f);
-        foodDispenser.Dispense();
-        StartCoroutine(DispenseFoodRoutine());
+        while (true)
+        {
+            Debug.Log("ah!");
+            yield return new WaitForSeconds(1f);
+            foodDispenser.Dispense();
+            Debug.Log("DISPENSE!");
+        }
     }
 }
