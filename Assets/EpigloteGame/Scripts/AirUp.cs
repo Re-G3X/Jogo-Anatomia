@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : MonoBehaviour
+public class AirUp : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float gravityReducer = 4;
+    [SerializeField] private float gravityUp = 4;
     [SerializeField] private float destroyHeight;
 
     // Start is called before the first frame update
@@ -17,13 +17,13 @@ public class Food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < destroyHeight)
+        if (transform.position.y > destroyHeight)
         {
             Destroy(gameObject);
         }
     }
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.up * gravityReducer, ForceMode.Acceleration);
+        rb.AddForce(Vector3.up * gravityUp, ForceMode.Acceleration);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class EpigloteGameManager : MonoBehaviour
 {
     public FoodDispenser foodDispenser;
+    public FoodDispenser airDispenser;
+    public FoodDispenser airUpDispenser;
     public float time;
 
     // Colisores
@@ -30,10 +32,13 @@ public class EpigloteGameManager : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("ah!");
             yield return new WaitForSeconds(time);
-            foodDispenser.Dispense();
-            Debug.Log("DISPENSE!");
+            int rand = Random.Range(0, 4);
+            switch (rand) { 
+                case 0: foodDispenser.Dispense(); break;
+                case 1: airDispenser.Dispense(); break;
+                case 2: airUpDispenser.Dispense(); break;
+            } 
         }
     }
     public void Score()

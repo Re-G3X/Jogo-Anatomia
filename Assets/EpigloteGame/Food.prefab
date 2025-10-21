@@ -146,4 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90a7443936af9a46964b0d00dc99035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 7964346320753502950}
+  gravityReducer: 4
   destroyHeight: -7.5
