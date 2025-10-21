@@ -18,5 +18,9 @@ public class Food : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    } 
+    }
+    private void FixedUpdate()
+    {
+        
+    }
 }

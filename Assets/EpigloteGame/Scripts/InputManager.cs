@@ -17,13 +17,16 @@ public class InputManager : MonoBehaviour
 
     private void Fechar_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        epigloteAnimator.SetTrigger("Open");
+        epigloteAnimator.SetBool("Open", true);
+        epigloteAnimator.SetBool("Close", false);
         Debug.Log("Abrir!");
     }
 
     private void Fechar_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        epigloteAnimator.SetTrigger("Close");
+        epigloteAnimator.SetBool("Close", true);
+        epigloteAnimator.SetBool("Open", false);
+
         Debug.Log("Close!");
     }
 

@@ -33,7 +33,7 @@ public partial class @EpigloteInputActions: IInputActionCollection2, IDisposable
                     ""id"": ""37635f1b-6010-4eb2-81cd-aa51d77daac6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": ""Hold(duration=0.2)"",
                     ""initialStateCheck"": false
                 }
             ],
