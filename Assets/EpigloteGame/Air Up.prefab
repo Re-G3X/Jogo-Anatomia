@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6786376793703731096}
   - component: {fileID: 7964346320753502950}
   - component: {fileID: 1173820957442342938}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Air Up
-  m_TagString: Air
+  m_TagString: AirUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

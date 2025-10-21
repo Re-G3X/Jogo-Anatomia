@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6786376793703731096}
   - component: {fileID: 7964346320753502950}
   - component: {fileID: 783063529840072813}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Food
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32768
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1

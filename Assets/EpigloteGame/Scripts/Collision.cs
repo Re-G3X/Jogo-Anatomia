@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collision : MonoBehaviour
 {
     [SerializeField] private bool detectFood;
+    [SerializeField] private bool detectAirUp;
     [SerializeField] private EpigloteGameManager gameManager;
     private string type = "Air";
     // Start is called before the first frame update
@@ -13,6 +14,9 @@ public class Collision : MonoBehaviour
         if (detectFood)
         {
             type = "Food";
+        }
+        if (detectAirUp) {
+            type = "AirUp";
         }
     }
 

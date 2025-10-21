@@ -35,8 +35,8 @@ public class EpigloteGameManager : MonoBehaviour
             yield return new WaitForSeconds(time);
             int rand = Random.Range(0, 4);
             switch (rand) { 
-                case 0: foodDispenser.Dispense(); break;
-                case 1: airDispenser.Dispense(); break;
+                //case 0: foodDispenser.Dispense(); break;
+                //case 1: airDispenser.Dispense(); break;
                 case 2: airUpDispenser.Dispense(); break;
             } 
         }

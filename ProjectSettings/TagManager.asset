@@ -24,6 +24,7 @@ TagManager:
   - Note
   - Food
   - Air
+  - AirUp
   layers:
   - Default
   - TransparentFX
@@ -39,9 +40,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Air
+  - AirUp
+  - Food
   - 
   - 
   - 
