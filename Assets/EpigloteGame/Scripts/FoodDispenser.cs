@@ -5,6 +5,7 @@ using UnityEngine;
 public class FoodDispenser : MonoBehaviour
 {
     public GameObject food;
+    public GameObject air;
     public Vector3 instantiatePosition;
     public float offSet;
     // Start is called before the first frame update
@@ -21,6 +22,13 @@ public class FoodDispenser : MonoBehaviour
 
     public void Dispense()
     {
-        Instantiate(food, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+        if (Random.Range(0, 3) % 2 == 1) {
+            Instantiate(food, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(air, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+        }
+        
     }
 }

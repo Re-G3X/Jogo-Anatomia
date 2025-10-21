@@ -5,6 +5,12 @@ using UnityEngine;
 public class EpigloteGameManager : MonoBehaviour
 {
     public FoodDispenser foodDispenser;
+    public float time;
+
+    // Colisores
+    [SerializeField] private Collider ColliderRespiratorio;
+    [SerializeField] private Collider ColliderDigestivo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +27,7 @@ public class EpigloteGameManager : MonoBehaviour
         while (true)
         {
             Debug.Log("ah!");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(time);
             foodDispenser.Dispense();
             Debug.Log("DISPENSE!");
         }
