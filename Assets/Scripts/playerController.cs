@@ -32,11 +32,9 @@ public class PlayerController : MonoBehaviour
     public float wallJumpTime = 0.2f;
     public float wallJumpForce = 8f;
     public float wallJumpHeight = 12f;
-    public float wallStickTime = 0.25f;
     public float wallJumpDirection = 1f;
     
     private float wallJumpTimer = 0f;
-    private float wallStickTimer = 0f;
     private bool wallJumping = false;
 
     public Vector2 move;
@@ -88,11 +86,13 @@ public class PlayerController : MonoBehaviour
 
         if (isRotating)
         {
-            float targetRotation = Mathf.Sign(lastDirection) * 90f;
+            // 0° = olhando para a câmera (frente)
+            // 180° = olhando para o cenário (costas)
+            float targetRotation = Mathf.Sign(lastDirection) > 0 ? 90f : 270f;
             float angle = Mathf.LerpAngle(transform.eulerAngles.y, targetRotation, Time.deltaTime * rotationSpeed);
             transform.eulerAngles = new Vector3(0, angle, 0);
 
-            if (Mathf.Abs(transform.eulerAngles.y - targetRotation) < 1f)
+            if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, targetRotation)) < 1f)
             {
                 isRotating = false;
             }

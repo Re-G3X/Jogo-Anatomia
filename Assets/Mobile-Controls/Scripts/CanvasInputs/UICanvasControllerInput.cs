@@ -12,7 +12,7 @@ public class UICanvasControllerInput : MonoBehaviour
 
     public void VirtualLookInput(Vector2 virtualLookDirection)
     {
-        inputs.look = virtualLookDirection; // Atualiza a direção do olhar
+        inputs.look = virtualLookDirection; // Atualiza a direção do olhar para o tiro
     }
 
     public void VirtualJumpInput(bool virtualJumpState)
