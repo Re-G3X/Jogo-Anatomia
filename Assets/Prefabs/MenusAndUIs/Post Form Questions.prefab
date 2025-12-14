@@ -34,7 +34,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350215175749911551}
   m_Father: {fileID: 6350149628515673103}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -175,7 +174,6 @@ RectTransform:
   - {fileID: 6350758690044261037}
   - {fileID: 6350307917960753593}
   m_Father: {fileID: 6350858392240431447}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -283,7 +281,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350096954075720451}
   m_Father: {fileID: 6350149628515673103}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -374,7 +371,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350945379717726449}
   m_Father: {fileID: 6350096954075720451}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -518,7 +514,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350151957134109389}
   m_Father: {fileID: 6350079294676486053}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -584,7 +579,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350925093325995343}
   m_Father: {fileID: 6350149628515673103}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -709,7 +703,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6350215175749911551}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -784,7 +777,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350166710846283185}
   m_Father: {fileID: 6350307917960753593}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -822,7 +814,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6350925093325995343}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -902,7 +893,6 @@ RectTransform:
   - {fileID: 6350149628515673103}
   - {fileID: 6351029445114892649}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.035, y: 0.04446429}
   m_AnchorMax: {x: 0.96000004, y: 0.9554643}
@@ -959,9 +949,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf8a638b6d72c443a7886424516ecc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hasCheckbox: 0
   questionsData: {fileID: 11400000, guid: 58fe81fb1cc5ae146abaebca85520005, type: 2}
   questionPrefab: {fileID: 1682351134811150, guid: af976e41556f4834fb617eed26a59437,
     type: 3}
+  checkboxPrefab: {fileID: 0}
   questionsPanel: {fileID: 6350096954075720451}
   submitButton: {fileID: 6350151957134109389}
   extraQuestionsPanelHeight: 100
@@ -1012,7 +1004,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6350858392240431447}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1093,7 +1084,6 @@ RectTransform:
   m_Children:
   - {fileID: 6350706458257337465}
   m_Father: {fileID: 6350758690044261037}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1131,7 +1121,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6350151957134109389}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
