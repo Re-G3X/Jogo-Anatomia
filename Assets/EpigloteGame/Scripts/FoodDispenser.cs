@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodDispenser : MonoBehaviour
 {
-    public GameObject food;
+    public GameObject food_1;
+    public GameObject food_2;
     public GameObject air;
     public GameObject airUp;
     public Vector3 instantiatePosition;
@@ -20,22 +22,21 @@ public class FoodDispenser : MonoBehaviour
         {
             if (goingUp)
             {
-                Instantiate(airUp, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+                Instantiate(airUp, instantiatePosition, Quaternion.identity);
             }
             else {
-                Instantiate(air, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+                Instantiate(air, instantiatePosition, Quaternion.identity);
             }
                 
         }
         else
         {
-            if (Random.Range(0, 3) % 2 == 1)
+            if(UnityEngine.Random.Range(0, 2) == 0)
             {
-                Instantiate(food, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+                Instantiate(food_1, instantiatePosition, Quaternion.identity);
             }
-            else
-            {
-                Instantiate(air, instantiatePosition + Vector3.right * Random.Range(-offSet, offSet), Quaternion.identity);
+            else {
+                Instantiate(food_2, instantiatePosition, Quaternion.identity);
             }
         }
         

@@ -20,16 +20,12 @@ public class Collision : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(type)) {
             Debug.Log("ACERTOU!");
             gameManager.Score();
+            Destroy(other.gameObject);
         }
         else
         {
