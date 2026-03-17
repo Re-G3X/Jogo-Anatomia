@@ -7,7 +7,7 @@ public class EpigloteGameManager : MonoBehaviour
     public FoodDispenser foodDispenser;
     public FoodDispenser airDispenser;
     public FoodDispenser airUpDispenser;
-    public float time;
+    public float dispenseTime;
 
     // Colisores
     [SerializeField] private Collider ColliderRespiratorio;
@@ -16,11 +16,22 @@ public class EpigloteGameManager : MonoBehaviour
     // Pontuação
     [SerializeField] private int score;
 
+
+
+    [SerializeField] private int oxigenTime;
+
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         StartCoroutine(DispenseFoodRoutine());
+
+        oxigenTime = 10;
+        StartCoroutine(TimeDeduct());
+
+        canva.Score(score);
+        canva.Time(oxigenTime);
     }
 
     // Update is called once per frame
@@ -32,7 +43,7 @@ public class EpigloteGameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(dispenseTime);
             int rand = Random.Range(0, 4);
             switch (rand) { 
                 case 0:
@@ -44,11 +55,15 @@ public class EpigloteGameManager : MonoBehaviour
                 case 1:
                     if (airDispenser != null) {
                         airDispenser.Dispense();
-                        foodDispenser.Dispense();
                     }
                     break;
-
                 case 2:
+                    if (airDispenser != null)
+                    {
+                        airDispenser.Dispense();
+                    }
+                    break;
+                case 3:
                     if (airUpDispenser != null)
                     {
                         airUpDispenser.Dispense();
@@ -61,5 +76,21 @@ public class EpigloteGameManager : MonoBehaviour
     {
         score += 1;
         canva.Score(score);
+    }
+
+    IEnumerator TimeDeduct()
+    {
+        while (oxigenTime > 0) { 
+            yield return new WaitForSeconds(1);
+            oxigenTime -= 1;
+            if(oxigenTime < 0) oxigenTime = 0;
+            canva.Time(oxigenTime);
+        }
+    }
+
+    public void TimeAddition()
+    {
+        oxigenTime += 3;
+        canva.Time(oxigenTime);
     }
 }

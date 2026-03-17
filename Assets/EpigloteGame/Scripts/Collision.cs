@@ -26,6 +26,10 @@ public class Collision : MonoBehaviour
             Debug.Log("ACERTOU!");
             gameManager.Score();
             Destroy(other.gameObject);
+            if (other.CompareTag("Air")) {
+                gameManager.TimeAddition();
+                Debug.Log("AIR!");
+            }
         }
         else
         {
