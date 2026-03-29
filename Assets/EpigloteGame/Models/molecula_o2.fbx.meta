@@ -3,7 +3,17 @@ guid: 50856c1d618852646bd3a74d62ec873e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ligacao
+    second: {fileID: 2100000, guid: ebd3eff4b8ee7ea4fbdc0105c0a38d75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oxigenio
+    second: {fileID: 2100000, guid: 3b51c3b766d3e3b498271613f5758784, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
