@@ -26,9 +26,11 @@ public class EpigloteGameManager : MonoBehaviour
     {
         score = 0;
         StartCoroutine(DispenseFoodRoutine());
+        StartCoroutine(DispenseAirRoutine());
+        StartCoroutine(DispenseAirUpRoutine());
 
-        oxigenTime = 10;
-        StartCoroutine(TimeDeduct());
+        oxigenTime = 25;
+        StartCoroutine(TimeTick());
 
         canva.Score(score);
         canva.Time(oxigenTime);
@@ -43,33 +45,38 @@ public class EpigloteGameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(dispenseTime);
-            int rand = Random.Range(0, 4);
-            switch (rand) { 
-                case 0:
-                    if (foodDispenser != null)
-                    {
-                        foodDispenser.Dispense();
-                    }
-                    break;
-                case 1:
-                    if (airDispenser != null) {
-                        airDispenser.Dispense();
-                    }
-                    break;
-                case 2:
-                    if (airDispenser != null)
-                    {
-                        airDispenser.Dispense();
-                    }
-                    break;
-                case 3:
-                    if (airUpDispenser != null)
-                    {
-                        airUpDispenser.Dispense();
-                    }
-                    break;
-            } 
+            yield return new WaitForSeconds(1f);
+            if (Random.Range(0,10) < 2)
+            {
+                yield return new WaitForSeconds(2f);
+            }
+            if (foodDispenser != null)
+            {
+                foodDispenser.Dispense();
+            }
+        }
+    }
+    IEnumerator DispenseAirRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.2f);
+            if (airDispenser != null)
+            {
+                airDispenser.Dispense();
+            }
+        }
+    }
+
+    IEnumerator DispenseAirUpRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.6f);
+            if (airUpDispenser != null)
+            {
+                airUpDispenser.Dispense();
+            }
         }
     }
     public void Score()
@@ -78,7 +85,7 @@ public class EpigloteGameManager : MonoBehaviour
         canva.Score(score);
     }
 
-    IEnumerator TimeDeduct()
+    IEnumerator TimeTick()
     {
         while (oxigenTime > 0) { 
             yield return new WaitForSeconds(1);
@@ -90,7 +97,12 @@ public class EpigloteGameManager : MonoBehaviour
 
     public void TimeAddition()
     {
-        oxigenTime += 3;
+        oxigenTime += 1;
+        canva.Time(oxigenTime);
+    }
+    public void TimeDeduct(int deduction)
+    {
+        oxigenTime -= deduction;
         canva.Time(oxigenTime);
     }
 }

@@ -15,25 +15,31 @@ public class Collision : MonoBehaviour
         {
             type = "Food";
         }
-        if (detectAirUp) {
+        if (detectAirUp)
+        {
             type = "AirUp";
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(type)) {
+        if (other.gameObject.CompareTag(type))
+        {
             Debug.Log("ACERTOU!");
             gameManager.Score();
             Destroy(other.gameObject);
-            if (other.CompareTag("Air")) {
+            if (other.CompareTag("Air"))
+            {
                 gameManager.TimeAddition();
                 Debug.Log("AIR!");
             }
         }
-        else
+        else if (type != "Food" && other.gameObject.tag == "Food")
         {
-            Debug.Log("ERROU!");
+            {
+                Debug.Log("ERROU!");
+                gameManager.TimeDeduct(3);
+            }
         }
     }
 }
