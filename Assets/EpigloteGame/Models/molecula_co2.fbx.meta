@@ -3,7 +3,12 @@ guid: 9e6fb886a7b8846498a010af57220662
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ligacao
+    second: {fileID: 2100000, guid: ebd3eff4b8ee7ea4fbdc0105c0a38d75, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
