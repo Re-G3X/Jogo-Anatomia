@@ -93,6 +93,11 @@ public class EpigloteGameManager : MonoBehaviour
             if(oxigenTime < 0) oxigenTime = 0;
             canva.Time(oxigenTime);
         }
+        if(oxigenTime <= 0)
+        {
+            oxigenTime = 0;
+            canva.Time(oxigenTime);
+        }
     }
 
     public void TimeAddition()
