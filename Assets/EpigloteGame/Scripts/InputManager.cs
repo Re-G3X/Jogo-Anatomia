@@ -41,4 +41,9 @@ public class InputManager : MonoBehaviour
     {
         
     }
+
+    public void Disable()
+    {
+        epigloteInputActions.Player.Disable();
+    }
 }

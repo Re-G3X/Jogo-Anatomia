@@ -15,11 +15,11 @@ public class EpigloteGameManager : MonoBehaviour
     [SerializeField] private CanvaManager canva;
     // Pontuação
     [SerializeField] private int score;
-
-
-
     [SerializeField] private int oxigenTime;
 
+    [SerializeField] private InputManager inputManager;
+    // 
+    private bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class EpigloteGameManager : MonoBehaviour
         StartCoroutine(DispenseAirRoutine());
         StartCoroutine(DispenseAirUpRoutine());
 
-        oxigenTime = 25;
+        oxigenTime = 30;
         StartCoroutine(TimeTick());
 
         canva.Score(score);
@@ -43,7 +43,7 @@ public class EpigloteGameManager : MonoBehaviour
     }
     IEnumerator DispenseFoodRoutine()
     {
-        while (true)
+        while (!gameOver)
         {
             yield return new WaitForSeconds(1f);
             if (Random.Range(0,10) < 2)
@@ -58,7 +58,7 @@ public class EpigloteGameManager : MonoBehaviour
     }
     IEnumerator DispenseAirRoutine()
     {
-        while (true)
+        while (!gameOver)
         {
             yield return new WaitForSeconds(1.2f);
             if (airDispenser != null)
@@ -70,7 +70,7 @@ public class EpigloteGameManager : MonoBehaviour
 
     IEnumerator DispenseAirUpRoutine()
     {
-        while (true)
+        while (!gameOver)
         {
             yield return new WaitForSeconds(1.6f);
             if (airUpDispenser != null)
@@ -81,33 +81,52 @@ public class EpigloteGameManager : MonoBehaviour
     }
     public void Score()
     {
-        score += 1;
-        canva.Score(score);
+        if (!gameOver && score < 100)
+        {
+            score += 1;
+            canva.Score(score);
+        }
     }
 
     IEnumerator TimeTick()
     {
-        while (oxigenTime > 0) { 
+        while (oxigenTime > 0 && score < 100) { 
             yield return new WaitForSeconds(1);
             oxigenTime -= 1;
             if(oxigenTime < 0) oxigenTime = 0;
             canva.Time(oxigenTime);
         }
-        if(oxigenTime <= 0)
-        {
+        if(oxigenTime <= 0) {
             oxigenTime = 0;
-            canva.Time(oxigenTime);
+            canva.GameOver("Game Over!");
+            Debug.Log("1");
         }
+        else if(score >= 100) {
+            canva.GameOver("Muito bem!");
+            Debug.Log("2");
+        }
+        Debug.Log("3");
+        gameOver = true;
+        canva.Time(oxigenTime);
+        inputManager.Disable();
     }
 
     public void TimeAddition()
     {
-        oxigenTime += 1;
-        canva.Time(oxigenTime);
+        if (!gameOver)
+        {
+            oxigenTime += 1;
+            canva.Time(oxigenTime);
+        }
     }
     public void TimeDeduct(int deduction)
     {
-        oxigenTime -= deduction;
-        canva.Time(oxigenTime);
+        if (!gameOver){   
+            oxigenTime -= deduction;
+            canva.Time(oxigenTime);
+        }
     }
+
+    
+ 
 }
