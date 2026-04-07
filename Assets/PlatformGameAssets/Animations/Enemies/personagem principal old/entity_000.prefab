@@ -775,7 +775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 121677110644433916}
   - component: {fileID: 7829503104863580655}
-  - component: {fileID: 7404191387893934577}
+  - component: {fileID: 1248869494123850075}
   m_Layer: 0
   m_Name: perna esq2
   m_TagString: Untagged
@@ -850,7 +850,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7404191387893934577
+--- !u!114 &1248869494123850075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871821423239004482}
   - component: {fileID: 44539940954212859}
-  - component: {fileID: 6271956095059871716}
+  - component: {fileID: 8807804980436991451}
   m_Layer: 0
   m_Name: FLECHA VERDE
   m_TagString: Untagged
@@ -951,7 +951,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6271956095059871716
+--- !u!114 &8807804980436991451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1489,7 +1489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933935585400946485}
   - component: {fileID: 1691060601602568088}
-  - component: {fileID: 8869015752095202390}
+  - component: {fileID: 5527958653696958323}
   m_Layer: 0
   m_Name: zpack_0
   m_TagString: Untagged
@@ -1564,7 +1564,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8869015752095202390
+--- !u!114 &5527958653696958323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1807,7 +1807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8842055679629544194}
   - component: {fileID: 5705961698838620913}
-  - component: {fileID: 5868571847546947959}
+  - component: {fileID: 9045362987227440517}
   m_Layer: 0
   m_Name: FELIZ1
   m_TagString: Untagged
@@ -1882,7 +1882,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5868571847546947959
+--- !u!114 &9045362987227440517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2027,7 +2027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2822549309134131084}
   - component: {fileID: 3693569394003522907}
-  - component: {fileID: 1777138652417530886}
+  - component: {fileID: 7600356304168199981}
   m_Layer: 0
   m_Name: mao dir1
   m_TagString: Untagged
@@ -2102,7 +2102,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1777138652417530886
+--- !u!114 &7600356304168199981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6576292036940766888}
   - component: {fileID: 7278616138311890915}
-  - component: {fileID: 2518347847908180526}
+  - component: {fileID: 7141918571465380760}
   m_Layer: 0
   m_Name: ARCO5
   m_TagString: Untagged
@@ -2288,7 +2288,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2518347847908180526
+--- !u!114 &7141918571465380760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2517,7 +2517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2954424092969894686}
   - component: {fileID: 3967363417369000678}
-  - component: {fileID: 4271719003479482057}
+  - component: {fileID: 3681853715571723429}
   m_Layer: 0
   m_Name: cabeca
   m_TagString: Untagged
@@ -2592,7 +2592,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4271719003479482057
+--- !u!114 &3681853715571723429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

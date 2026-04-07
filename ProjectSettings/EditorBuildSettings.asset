@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Rhythm Game/Scenes/IniciarMenu.unity
+    guid: 07338fea9288b35459fb685fbd3f54d4
+  - enabled: 1
+    path: Assets/Rhythm Game/Scenes/Dialogue.unity
+    guid: d60e65c57b072ff4e9755abac5e367fe
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5485ac31a41ef9b46bd1b977b05b8368,
       type: 2}
