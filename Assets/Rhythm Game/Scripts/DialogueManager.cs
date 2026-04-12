@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    public TrocarCena trocarCena;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -65,6 +67,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        trocarCena.ChangeToGameplay("EpigloteScene 1");
     }
 
 }
