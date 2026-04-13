@@ -67,7 +67,7 @@ namespace Game.GameManager
         
         private void OnApplicationQuit()
         {
-            AnalyticsEvent.GameOver();
+            //AnalyticsEvent.GameOver();
         }
         
         void OnEnable()

@@ -48,6 +48,17 @@ public partial class @EpigloteInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Fechar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4adcaa83-371a-4cdd-8c1f-45a9aeef10d3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fechar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
