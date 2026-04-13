@@ -934,14 +934,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: LeoHunter
-    sentences:
-    - "Bem-vindos \xE0s cordas vocais!"
-    - "Elas est\xE3o localizadas na laringe e s\xE3o essenciais para a produ\xE7\xE3o
-      de som."
-    - "Quando o ar dos pulm\xF5es passa por elas, elas vibram e criam a sua voz."
-    - "Mudan\xE7as na vibra\xE7\xE3o podem alterar o tom e a intensidade da voz."
-  characterImage: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+    lines:
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "L\xE9o, ele terminou de almo\xE7ar e agora foi tomar banho. Escuta
+        isso, ele come\xE7ou a cantar.\r"
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "E estamos na laringe. Aqui ficam as pregas vocais, respons\xE1veis
+        pela produ\xE7\xE3o da voz.\r"
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Elas est\xE3o fixadas em estruturas cartilaginosas como a cartilagem
+        tireoide e a cartilagem ariten\xF3ide.\r"
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Quando o ar sai dos pulm\xF5es e passa pela glote, ocorre a vibra\xE7\xE3o
+        das pregas vocais.\r"
+    - name: LeoHunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "Ent\xE3o \xE9 essa vibra\xE7\xE3o que gera o som que ele est\xE1
+        emitindo ao cantar?\r"
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Exatamente. E a tens\xE3o das pregas vocais, controlada por m\xFAsculos
+        da laringe, altera o tom da voz.\r"
 --- !u!4 &450181914
 Transform:
   m_ObjectHideFlags: 0
