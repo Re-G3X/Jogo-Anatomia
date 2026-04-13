@@ -46,9 +46,9 @@ public class EpigloteGameManager : MonoBehaviour
         while (!gameOver)
         {
             yield return new WaitForSeconds(1f);
-            if (Random.Range(0,10) < 2)
+            if (Random.Range(0,10) < 3)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(4f);
             }
             if (foodDispenser != null)
             {
