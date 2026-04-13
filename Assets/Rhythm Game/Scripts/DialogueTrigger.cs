@@ -5,11 +5,15 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public bool playOnStart;
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.2f);
-        TriggerDialogue();
+        if (playOnStart)
+        {
+            yield return new WaitForSeconds(0.2f);
+            TriggerDialogue();
+        }
     }
 
     public void TriggerDialogue()

@@ -959,6 +959,7 @@ MonoBehaviour:
       sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
       sentence: "Exatamente. E a tens\xE3o das pregas vocais, controlada por m\xFAsculos
         da laringe, altera o tom da voz.\r"
+  playOnStart: 1
 --- !u!4 &450181914
 Transform:
   m_ObjectHideFlags: 0
@@ -2685,6 +2686,8 @@ MonoBehaviour:
   dialogueText: {fileID: 1863156199}
   characterImage: {fileID: 549356461}
   animator: {fileID: 351999679}
+  trocarCena: {fileID: 0}
+  chamarMenu: {fileID: 0}
 --- !u!4 &1418521741
 Transform:
   m_ObjectHideFlags: 0

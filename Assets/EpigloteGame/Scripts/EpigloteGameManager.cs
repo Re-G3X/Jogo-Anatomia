@@ -20,7 +20,8 @@ public class EpigloteGameManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     // 
     private bool gameOver = false;
-
+    [SerializeField] private DialogueTrigger finalDialogue;
+    [SerializeField] private DialogueTrigger gameoverDialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,17 +99,18 @@ public class EpigloteGameManager : MonoBehaviour
         }
         if(oxigenTime <= 0) {
             oxigenTime = 0;
-            canva.GameOver("Game Over!");
-            Debug.Log("1");
+            canva.GameOver();
+            gameoverDialogue.TriggerDialogue();
         }
         else if(score >= 100) {
-            canva.GameOver("Muito bem!");
-            Debug.Log("2");
+            canva.GameOver();
+            finalDialogue.TriggerDialogue();
         }
         Debug.Log("3");
         gameOver = true;
         canva.Time(oxigenTime);
         inputManager.Disable();
+        
     }
 
     public void TimeAddition()

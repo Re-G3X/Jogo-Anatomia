@@ -11,11 +11,11 @@ public class CanvaManager : MonoBehaviour
     public TextMeshProUGUI tempoTexto;
     public Slider Slider;
 
-    public TextMeshProUGUI textoCentral;
+    public GameObject gameplayHUD;
+    public GameObject gameoverMenu;
     // Start is called before the first frame update
     void Start()
     {
-        textoCentral.gameObject.SetActive(false);
         Slider.maxValue = 50;
     }
 
@@ -27,9 +27,8 @@ public class CanvaManager : MonoBehaviour
     {
         Slider.value = tempo;
     }
-    public void GameOver(String text)
-    {
-        textoCentral.text = text;
-        textoCentral.gameObject.SetActive(true);
+    public void GameOver()
+    { 
+        gameplayHUD.SetActive(false);
     }
 }

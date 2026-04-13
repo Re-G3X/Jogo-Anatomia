@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<DialogueLine> lines;
 
     public TrocarCena trocarCena;
+    public GameObject chamarMenu;
 
     void Start()
     {
@@ -67,6 +68,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
-        trocarCena.ChangeToGameplay("EpigloteScene 1");
+        if (trocarCena != null)
+        {
+            trocarCena.ChangeToGameplay("EpigloteScene 1");
+        }
+        else if (chamarMenu != null) { 
+            chamarMenu.SetActive(true);
+        }
     }
 }

@@ -1354,355 +1354,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: playOnStart
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
+    - target: {fileID: 8585342450170155554, guid: f223eb66b85a20f45803171640158540,
         type: 3}
-      propertyPath: dialogue.lines.Array.size
-      value: 14
+      propertyPath: playOnStart
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[0]
-      value: "L\xE9o, veja bem. Ali temos a entrada da laringe, chamada de \xE1dito
-        da laringe."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[1]
-      value: "Mas o que \xE9 aquela estrutura que abre e fecha essa entrada?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[2]
-      value: "Aquela estrutura \xE9 a epiglote. Ela atua como uma v\xE1lvula."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[3]
-      value: "Durante a degluti\xE7\xE3o, ela se fecha para impedir a entrada de
-        alimentos na laringe e na traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[4]
-      value: E quando estamos respirando, ela permanece aberta, permitindo a passagem
-        do ar.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[5]
-      value: "Olha, ele come\xE7ou a almo\xE7ar e ainda est\xE1 falando ao mesmo
-        tempo."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[6]
-      value: Isso pode desregular o funcionamento da epiglote e aumentar o risco
-        de engasgo.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[7]
-      value: "Ent\xE3o o problema \xE9 que a epiglote pode n\xE3o fechar no momento
-        certo?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[8]
-      value: "Exatamente. O alimento deve seguir para o es\xF4fago, n\xE3o para a
-        traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[9]
-      value: "Voc\xEA precisa controlar o momento de abrir e fechar o \xE1dito da
-        laringe."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[0].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[1].name
-      value: Leohunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[2].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[3].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[4].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[5].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[6].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[7].name
-      value: Leohunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[8].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[9].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[10]
-      value: "Se errar o tempo, o alimento pode entrar na via respirat\xF3ria."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[11]
-      value: "Entendi. Vou ajustar o tempo para evitar que o alimento v\xE1 para
-        a traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[12]
-      value: "Isso mesmo. Continue at\xE9 que ele termine o almo\xE7o."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.sentences.Array.data[13]
-      value: "Ok, vou manter tudo funcionando corretamente at\xE9 o final."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[10].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[11].name
-      value: Leohunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[12].name
-      value: Leahunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[13].name
-      value: Leohunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[14].name
-      value: Leohunter
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[5].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[6].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[7].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[8].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[9].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[10].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[11].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[12].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[13].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[14].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
-        type: 3}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[0].sentence
-      value: "L\xE9o, veja bem. Ali temos a entrada da laringe, chamada de \xE1dito
-        da laringe."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[1].sentence
-      value: "Mas o que \xE9 aquela estrutura que abre e fecha essa entrada?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[2].sentence
-      value: "Aquela estrutura \xE9 a epiglote. Ela atua como uma v\xE1lvula."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[3].sentence
-      value: "Durante a degluti\xE7\xE3o, ela se fecha para impedir a entrada de
-        alimentos na laringe e na traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[4].sentence
-      value: E quando estamos respirando, ela permanece aberta, permitindo a passagem
-        do ar.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[5].sentence
-      value: "Olha, ele come\xE7ou a almo\xE7ar e ainda est\xE1 falando ao mesmo
-        tempo."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[6].sentence
-      value: Isso pode desregular o funcionamento da epiglote e aumentar o risco
-        de engasgo.
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[7].sentence
-      value: "Ent\xE3o o problema \xE9 que a epiglote pode n\xE3o fechar no momento
-        certo?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[8].sentence
-      value: "Exatamente. O alimento deve seguir para o es\xF4fago, n\xE3o para a
-        traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[9].sentence
-      value: "Voc\xEA precisa controlar o momento de abrir e fechar o \xE1dito da
-        laringe."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[10].sentence
-      value: "Se errar o tempo, o alimento pode entrar na via respirat\xF3ria."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[11].sentence
-      value: "Entendi. Vou ajustar o tempo para evitar que o alimento v\xE1 para
-        a traqueia."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[12].sentence
-      value: "Isso mesmo. Continue at\xE9 que ele termine o almo\xE7o."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[13].sentence
-      value: "Ok, vou manter tudo funcionando corretamente at\xE9 o final."
-      objectReference: {fileID: 0}
-    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      propertyPath: dialogue.lines.Array.data[14].sentence
-      value: "Ok, vou manter tudo funcionando corretamente at\xE9 o final."
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8585342450170155554, guid: f223eb66b85a20f45803171640158540, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4408633979968044588, guid: f223eb66b85a20f45803171640158540,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1173729414}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f223eb66b85a20f45803171640158540, type: 3}
 --- !u!1001 &611995552
 PrefabInstance:
@@ -3225,6 +2889,8 @@ MonoBehaviour:
   score: 0
   oxigenTime: 0
   inputManager: {fileID: 0}
+  finalDialogue: {fileID: 0}
+  gameoverDialogue: {fileID: 0}
 --- !u!4 &970886381
 Transform:
   m_ObjectHideFlags: 0
@@ -3889,6 +3555,8 @@ MonoBehaviour:
   tempoTexto: {fileID: 1437580884}
   Slider: {fileID: 1974730252}
   textoCentral: {fileID: 2138250322}
+  gameplayHUD: {fileID: 0}
+  gameoverMenu: {fileID: 0}
 --- !u!4 &1138507234
 Transform:
   m_ObjectHideFlags: 0
@@ -3904,38 +3572,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1173729411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4408633979968044588, guid: f223eb66b85a20f45803171640158540,
-    type: 3}
-  m_PrefabInstance: {fileID: 545328575}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1173729414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173729411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cedb2f44491e97543ac31ee84049d794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    lines:
-    - name: Leahunter
-      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
-      sentence: "Muito bem! Voc\xEA conseguiu!"
-    - name: Leahunter
-      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
-      sentence: "Quando quiser, pode voltar a responder o question\xE1rio."
-    - name: Leohunter
-      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
-      sentence: Ou podemos praticar mais um pouco...
-    - name: Leohunter
-      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
-      sentence: "E a\xED? O que vai ser?"
 --- !u!1 &1176864145
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,18 +4822,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437580882}
   m_CullTransparentMesh: 1
---- !u!114 &1448143978 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2178582280850728941, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1946017634}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1477761387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6907,71 +6531,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1495933241851394468, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2803286781177407140, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4143818553531654745, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 1448143978}
-    - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 611995553}
-    - target: {fileID: 4476760590776591422, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayNextSentence
-      objectReference: {fileID: 0}
-    - target: {fileID: 4931776766786722944, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6174516073441841936, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7038084237198535622, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7038084237198535622, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7572825939255274338, guid: 008c9d2a4ca1f72438827b8bbcada8b0,
         type: 3}
       propertyPath: m_Name
@@ -7732,6 +7296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab4de9c600472b45ab443017b8a81fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: EpigloteScene 1
 --- !u!1 &2138250320
 GameObject:
   m_ObjectHideFlags: 0

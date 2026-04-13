@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3533996404742135711}
   - component: {fileID: 6856500638480678294}
+  - component: {fileID: 8585342450170155554}
   m_Layer: 0
   m_Name: DialogueStarter
   m_TagString: Untagged
@@ -45,11 +46,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: LeoHunter
-    sentences:
-    - "Bem-vindos \xE0s cordas vocais!"
-    - "Elas est\xE3o localizadas na laringe e s\xE3o essenciais para a produ\xE7\xE3o
-      de som."
-    - "Quando o ar dos pulm\xF5es passa por elas, elas vibram e criam a sua voz."
-    - "Mudan\xE7as na vibra\xE7\xE3o podem alterar o tom e a intensidade da voz."
-  characterImage: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+    lines:
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "L\xE9o, veja bem. Ali temos a entrada da laringe, chamada de \xE1dito
+        da laringe."
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "Mas o que \xE9 aquela estrutura que abre e fecha essa entrada?"
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Aquela estrutura \xE9 a epiglote. Ela atua como uma v\xE1lvula."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Durante a degluti\xE7\xE3o, ela se fecha para impedir a entrada
+        de alimentos na laringe e na traqueia."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: E quando estamos respirando, ela permanece aberta, permitindo a passagem
+        do ar.
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Olha, ele come\xE7ou a almo\xE7ar e ainda est\xE1 falando ao mesmo
+        tempo."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: Isso pode desregular o funcionamento da epiglote e aumentar o risco
+        de engasgo.
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "Ent\xE3o o problema \xE9 que a epiglote pode n\xE3o fechar no momento
+        certo?"
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Exatamente. O alimento deve seguir para o es\xF4fago, n\xE3o para
+        a traqueia."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Voc\xEA precisa controlar o momento de abrir e fechar o \xE1dito
+        da laringe."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Se errar o tempo, o alimento pode entrar na via respirat\xF3ria."
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "Entendi. Vou ajustar o tempo para evitar que o alimento v\xE1 para
+        a traqueia."
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Isso mesmo. Continue at\xE9 que ele termine o almo\xE7o."
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "Ok, vou manter tudo funcionando corretamente at\xE9 o final."
+--- !u!114 &8585342450170155554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408633979968044588}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedb2f44491e97543ac31ee84049d794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    lines:
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Muito bem! Voc\xEA conseguiu!"
+    - name: Leahunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Quando quiser, pode voltar a responder o question\xE1rio."
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: Ou podemos praticar mais um pouco...
+    - name: Leohunter
+      sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
+      sentence: "E a\xED? O que vai ser?"
