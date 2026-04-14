@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
+    public TMP_Text buttonText;
 
     public Image characterImage;
 
     public Animator animator;
 
     private Queue<DialogueLine> lines;
+
+    [SerializeField] private string nextSceneName;
 
     void Start()
     {
@@ -49,6 +53,11 @@ public class DialogueManager : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(TypeSentence(line.sentence));
+
+        if (lines.Count == 0)
+            buttonText.text = "Começar \u2192";
+        else
+            buttonText.text = "Continuar \u2192";
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -65,5 +74,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        StartCoroutine(LoadNextScene());
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(0.3f); 
+        SceneManager.LoadScene(nextSceneName);
     }
 }

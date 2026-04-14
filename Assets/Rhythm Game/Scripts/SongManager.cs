@@ -28,6 +28,9 @@ public class SongManager : MonoBehaviour
 
     public Slider progressBar; // indicar a posição da musica 
 
+    public string resultsSceneName;
+    private bool songEnded = false;
+
     // posição onde as notas desaparecem apos passarem do ponto de acerto 
     public float noteDespawnY
     {
@@ -56,6 +59,12 @@ public class SongManager : MonoBehaviour
     void Update()
     {
         UpdateProgressBar();
+
+        if (!songEnded && audioSource.isPlaying == false && audioSource.time > 0)
+        {
+            songEnded = true;
+            OnSongEnd();
+        }
     }
 
     private void UpdateProgressBar()
@@ -121,4 +130,15 @@ public class SongManager : MonoBehaviour
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
 
+    void OnSongEnd()
+    {
+        // salva os dados
+        GameData.score = ScoreManager.GetScore();
+        GameData.perfect = ScoreManager.GetPerfect();
+        GameData.good = ScoreManager.GetGood();
+        GameData.miss = ScoreManager.GetMiss();
+
+        // troca de cena
+        SceneLoader.Instance.LoadScene(resultsSceneName);
+    }
 }
