@@ -30,7 +30,6 @@ public class ResultsUI : MonoBehaviour
         string rank = GetRank(accuracy);
         string feedback = GetFeedback(rank);
 
-        // 👇 agora o título é o feedback
         titleText.text = feedback;
 
         rankText.text = "Rank " + rank;
@@ -41,9 +40,9 @@ public class ResultsUI : MonoBehaviour
     string GetRank(float accuracy)
     {
         if (accuracy >= 95f) return "S";
-        if (accuracy >= 85f) return "A";
-        if (accuracy >= 70f) return "B";
-        if (accuracy >= 50f) return "C";
+        if (accuracy >= 80f) return "A";
+        if (accuracy >= 60f) return "B";
+        if (accuracy >= 40f) return "C";
         return "D";
     }
 

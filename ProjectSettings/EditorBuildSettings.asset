@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Rhythm Game/Scenes/MainMenu.unity
     guid: 07338fea9288b35459fb685fbd3f54d4
   - enabled: 1
+    path: Assets/Rhythm Game/Scenes/Credits.unity
+    guid: 9b3fa916c4aeefa4cb55df980040e3a1
+  - enabled: 1
     path: Assets/Rhythm Game/Scenes/Dialogue.unity
     guid: d60e65c57b072ff4e9755abac5e367fe
   - enabled: 1

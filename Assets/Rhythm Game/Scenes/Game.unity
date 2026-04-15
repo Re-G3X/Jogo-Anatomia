@@ -10378,9 +10378,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7dbb0abe47d39bf4296bf63c98942817, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ea93c6d35a73f3c4d86df1d410f9e190, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10732,7 +10732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.889, y: 3.8}
+  m_AnchoredPosition: {x: -5.889, y: 3.2}
   m_SizeDelta: {x: 2.5, y: 1.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &813783787
@@ -11156,7 +11156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032660496
@@ -11365,7 +11365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3.8}
+  m_AnchoredPosition: {x: 0, y: 3.2}
   m_SizeDelta: {x: 2.5, y: 1.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1175569684
@@ -16790,7 +16790,7 @@ MonoBehaviour:
   songDelayInSeconds: 0
   marginOfError: 0.08
   inputDelayInMilliseconds: 0
-  fileLocation: boss_battle.mid
+  fileLocation: broken_arm.mid
   noteTime: 1
   noteSpawnY: 0
   noteTapY: 3
@@ -17056,7 +17056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1615779017

@@ -104,10 +104,11 @@ public class SongManager : MonoBehaviour
     private void ReadFromFile()
     {
         // caminho do arquivo MIDI salvo localmente
-        string customPath = Application.dataPath + "/Rhythm Game/StreamingAssets/" + fileLocation;
-        midiFile = MidiFile.Read(customPath);
+        string path = Path.Combine(Application.streamingAssetsPath, fileLocation);
+        midiFile = MidiFile.Read(path);
         GetDataFromMidi();
     }
+
     public void GetDataFromMidi()
     {
         // obtem todas as notas do arquivo MIDI
@@ -120,10 +121,12 @@ public class SongManager : MonoBehaviour
 
         Invoke(nameof(StartSong), songDelayInSeconds);
     }
+
     public void StartSong()
     {
         audioSource.Play();
     }
+
     public static double GetAudioSourceTime()
     {
         // retorna o tempo atual da música em segundos

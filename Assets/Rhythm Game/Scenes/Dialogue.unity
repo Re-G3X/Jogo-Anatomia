@@ -1104,6 +1104,9 @@ MonoBehaviour:
       sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
       sentence: "As setas indicam o padr\xE3o das vibra\xE7\xF5es. Acerte o tempo
         correto para manter a produ\xE7\xE3o do som.\r"
+    - name: LeaHunter
+      sprite: {fileID: 21300000, guid: ab744da194e331241ae0f5676accba42, type: 3}
+      sentence: "Use as teclas do teclado no momento certo para acompanhar as vibra\xE7\xF5es."
     - name: LeoHunter
       sprite: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c, type: 3}
       sentence: "Entendi. Vou acompanhar as varia\xE7\xF5es para manter o canto est\xE1vel.\r"
