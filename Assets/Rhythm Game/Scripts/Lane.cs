@@ -13,8 +13,7 @@ public class Lane : MonoBehaviour
     public List<double> timeStamps = new List<double>();
 
     int spawnIndex = 0;
-    int inputIndex = 0; 
-    public static bool keyPressedThisFrame = false; // Impede múltiplas notas no mesmo frame
+
     public static CordasVocais vocalCords;
 
     void Start()
@@ -37,43 +36,27 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
-        keyPressedThisFrame = false; // Reseta a flag para o próximo frame
+        notes.RemoveAll(note => note == null);
 
-        // Verifica se ainda há notas para spawnar e se é o momento correto
+        if (Input.GetKeyDown(input))
+        {
+            OnInput();
+        }
+
         if (spawnIndex < timeStamps.Count)
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
             {
-                // Instancia uma nova nota e armazena na lista
-                var note = Instantiate(notePrefab, transform);
-                notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
+                var noteObj = Instantiate(notePrefab, transform);
+                Note note = noteObj.GetComponent<Note>();
+
+                note.assignedTime = (float)timeStamps[spawnIndex];
+
+                notes.Add(note);
+
                 spawnIndex++;
             }
         }
-        
-        // Verifica se ainda há notas para capturar input e processar acertos/erros
-        if (inputIndex < notes.Count && Input.GetKeyDown(input) && keyPressedThisFrame == false)
-        {
-            double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
-
-            
-            
-
-            // Verifica se a tecla foi pressionada no tempo correto
-            if (Math.Abs(audioTime - timeStamp) < marginOfError) // Esse cara não tá entrando...
-            { 
-                // Nota acertada dentro da margem de erro
-                Hit();
-                //keyPressedThisFrame = true; // Impede que outras notas sejam acertadas no mesmo frame
-                Destroy(notes[inputIndex].gameObject);
-                notes.RemoveAt(inputIndex); // Remove a nota da lista para evitar erros futuros
-                
-            }
-        }
-
     }
 
     // Jogador acertou uma nota
@@ -88,13 +71,36 @@ public class Lane : MonoBehaviour
         ScoreManager.Miss();
     }
 
-    public void SetKeyIsPressedThisFrame()
+    public void OnInput()
     {
-        keyPressedThisFrame = true;
-        vocalCords.HitAnimation(noteRestriction.ToString());
-    }
-    public bool GetKeyIsPressedThisFrame()
-    {
-        return keyPressedThisFrame;
+        if (notes.Count == 0)
+            return;
+
+        // procura a primeira nota válida
+        Note noteToHit = null;
+
+        foreach (var note in notes)
+        {
+            if (note != null && note.CanBeHit())
+            {
+                noteToHit = note;
+                break;
+            }
+        }
+
+        if (noteToHit == null)
+            return;
+
+        if (noteToHit.IsPerfect())
+        {
+            ScoreManager.PerfectHit();
+        }
+        else
+        {
+            ScoreManager.Hit();
+        }
+
+        noteToHit.Hit();
+        notes.Remove(noteToHit);
     }
 }
