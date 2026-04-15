@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/EpigloteGame/IniciarMenu.unity
     guid: 40b50fb65d4b4c64b9781e128c39e1b5
   - enabled: 1
+    path: Assets/EpigloteGame/Credits.unity
+    guid: 32202cb0f6bf9cc46b17624517af4b6a
+  - enabled: 1
     path: "Assets/EpigloteGame/Di\xE1logo - Epligote Game.unity"
     guid: 3e1ea0add236b0a49ae6d0c385427cfb
   - enabled: 1
