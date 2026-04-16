@@ -2,12 +2,14 @@ using Melanchall.DryWetMidi.Interaction;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction; // Restrição de nota para essa lane 
     public KeyCode input; // Tecla associada para ativar essa lane
+    public int inputNumber; // Substitui a tecla input, para funcionar com o novo InputSystem
     public GameObject notePrefab;
     List<Note> notes = new List<Note>(); // Lista de notas ativas na lane 
     public List<double> timeStamps = new List<double>();
@@ -15,6 +17,25 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
 
     public static CordasVocais vocalCords;
+
+    private void OnEnable()
+    {
+        InputManagerCordasVocais.OnLanePressed += OnInput;
+    }
+
+    private void OnDisable()
+    {
+        InputManagerCordasVocais.OnLanePressed -= OnInput;
+    }
+
+    void OnInput(int pressedLane)
+    {
+        Debug.Log(pressedLane);
+        if (pressedLane == inputNumber)
+        {
+            OnInput();
+        }
+    }
 
     void Start()
     {
@@ -38,10 +59,10 @@ public class Lane : MonoBehaviour
     {
         notes.RemoveAll(note => note == null);
 
-        if (Input.GetKeyDown(input))
-        {
-            OnInput();
-        }
+        //if (UnityEngine.Input.GetKeyDown(input))
+        //{
+        //    OnInput();
+        //}
 
         if (spawnIndex < timeStamps.Count)
         {
