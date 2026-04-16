@@ -157,6 +157,7 @@ MonoBehaviour:
   notePrefab: {fileID: 2381727169120096286, guid: da5c82e2fa5e2f243a5fef68b71e9020,
     type: 3}
   timeStamps: []
+  cordasVocaisAnimator: {fileID: 0}
 --- !u!4 &115505223
 Transform:
   m_ObjectHideFlags: 0
@@ -507,6 +508,7 @@ MonoBehaviour:
   notePrefab: {fileID: 2358926906375358046, guid: 575995861a6b46242becb35aaefb198a,
     type: 3}
   timeStamps: []
+  cordasVocaisAnimator: {fileID: 0}
 --- !u!4 &270278165
 Transform:
   m_ObjectHideFlags: 0
@@ -11648,6 +11650,7 @@ MonoBehaviour:
   notePrefab: {fileID: 2886477312601594556, guid: 94b0879ba1b79d146bbf2433c11a7f62,
     type: 3}
   timeStamps: []
+  cordasVocaisAnimator: {fileID: 0}
 --- !u!4 &990521603
 Transform:
   m_ObjectHideFlags: 0
@@ -12703,6 +12706,7 @@ MonoBehaviour:
   notePrefab: {fileID: 1350467800529422993, guid: e1c75cd890d537e499773a020599d7ad,
     type: 3}
   timeStamps: []
+  cordasVocaisAnimator: {fileID: 0}
 --- !u!4 &1294224583
 Transform:
   m_ObjectHideFlags: 0

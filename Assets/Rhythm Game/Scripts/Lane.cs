@@ -17,6 +17,7 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
 
     public static CordasVocais vocalCords;
+    public Animator cordasVocaisAnimator;
 
     private void OnEnable()
     {
@@ -83,7 +84,7 @@ public class Lane : MonoBehaviour
     // Jogador acertou uma nota
     private void Hit()
     {
-        ScoreManager.Hit();
+        ScoreManager.Hit(noteRestriction.ToString());
     }
 
     // Jogador errou uma nota
@@ -118,7 +119,7 @@ public class Lane : MonoBehaviour
         }
         else
         {
-            ScoreManager.Hit();
+            ScoreManager.Hit(noteRestriction.ToString());
         }
 
         noteToHit.Hit();

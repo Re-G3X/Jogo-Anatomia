@@ -38,11 +38,12 @@ public class ScoreManager : MonoBehaviour
         scoreParticles = FindObjectOfType<ScoreParticles>();
 }
 
-    public static void Hit()
+    public static void Hit(string note)
     {
         goodHits++;
         comboScore += 1;
         totalScore += 5 * comboScore; // aumenta a pontuação com base na quantidade de combos
+        vocalCords.HitAnimation(note);
         Instance.hitSFX.Play();
         scoreParticles.ParticleHit();
     }
