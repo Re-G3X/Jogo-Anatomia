@@ -24,7 +24,7 @@ public class ResultsUI : MonoBehaviour
         float accuracy = 0f;
         if (total > 0)
         {
-            accuracy = ((perfect * 1f + good * 0.5f) / total) * 100f;
+            accuracy = ((perfect * 1f + good * 0.75f) / total) * 100f;
         }
 
         string rank = GetRank(accuracy);

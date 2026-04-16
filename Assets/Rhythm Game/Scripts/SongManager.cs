@@ -16,6 +16,8 @@ public class SongManager : MonoBehaviour
     public float songDelayInSeconds; // delay antes de começar a musica 
     public double marginOfError; // in seconds
 
+    public PlaySong songPlayer;
+
     public int inputDelayInMilliseconds;
 
 
@@ -119,7 +121,8 @@ public class SongManager : MonoBehaviour
         // define os timestamps das notas para cada lane
         foreach (var lane in lanes) lane.SetTimeStamps(array);
 
-        Invoke(nameof(StartSong), songDelayInSeconds);
+        //Invoke(nameof(StartSong), songDelayInSeconds);
+        songPlayer.Play(songDelayInSeconds);
     }
 
     public void StartSong()
