@@ -1360,11 +1360,16 @@ PrefabInstance:
     - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
         type: 3}
       propertyPath: dialogue.lines.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
         type: 3}
       propertyPath: dialogue.lines.Array.data[14].name
+      value: Leohunter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
+        type: 3}
+      propertyPath: dialogue.lines.Array.data[15].name
       value: Leohunter
       objectReference: {fileID: 0}
     - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
@@ -1375,9 +1380,21 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
         type: 3}
+      propertyPath: dialogue.lines.Array.data[15].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c96fc8a117e7b9e4d814f9ea79b58b5c,
+        type: 3}
+    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
+        type: 3}
       propertyPath: dialogue.lines.Array.data[14].sentence
-      value: "** Se estiver no teclado, pressione a tecla ESPA\xC7O para contrair
-        a epiglote **"
+      value: "** Se estiver no teclado, SEGURE a tecla ESPA\xC7O para contrair a
+        epiglote **"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856500638480678294, guid: f223eb66b85a20f45803171640158540,
+        type: 3}
+      propertyPath: dialogue.lines.Array.data[15].sentence
+      value: "** Se estiver no mobile, SEGURE o bot\xE3o para contrair a epiglote
+        **"
       objectReference: {fileID: 0}
     - target: {fileID: 8585342450170155554, guid: f223eb66b85a20f45803171640158540,
         type: 3}
